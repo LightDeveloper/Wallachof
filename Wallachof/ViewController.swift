@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func btnFetchRequestPressed(_ sender: Any) {
         for producto in Product.all {
-            debugPrint("\(producto.name) a  \(producto.price) desc: \(producto.desc)")
+            debugPrint("\(String(describing: producto.name)) a  \(producto.price) desc: \(String(describing: producto.desc))")
         }
     }
 }

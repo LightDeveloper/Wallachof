@@ -19,8 +19,25 @@ class AddProductViewController: UIViewController {
     }
     
     @IBAction func tapDetected(_ sender: UITapGestureRecognizer) {
-        
         debugPrint("Han hecho tap \(sender.numberOfTouches)")
+        showPictureSourceAlert()
+    }
+    
+    func showPictureSourceAlert() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Abrir cámara", style: .default) { (alert) in
+            // TODO: Abrir la cámara
+            debugPrint("Abriría la cámara")
+        }
+        alert.addAction(cameraAction)
+        let albumAction = UIAlertAction(title: "Abrir álbum", style: .default) { (alert) in
+            // TODO: Abrir la galería
+            debugPrint("Abriría la galería")
+        }
+        alert.addAction(albumAction)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        alert.addAction(cancelAction)
         
+        present(alert, animated: true)
     }
 }
