@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gmB-nM-XEF">
-                                <rect key="frame" x="157.5" y="408" width="99" height="80"/>
+                                <rect key="frame" x="157.5" y="383" width="99" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-82-uMr">
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="30"/>
@@ -35,16 +34,35 @@
                                             <action selector="btnFetchRequestPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pbA-wL-bvm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X66-5g-kFw">
+                                        <rect key="frame" x="0.0" y="100" width="99" height="30"/>
+                                        <state key="normal" title="Load Image"/>
+                                        <connections>
+                                            <action selector="btnLoadImagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0S-cs-7EX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N7W-dj-nsn">
+                                <rect key="frame" x="57" y="44" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="JMD-eN-73z"/>
+                                    <constraint firstAttribute="width" secondItem="N7W-dj-nsn" secondAttribute="height" multiplier="1:1" id="MsQ-7Y-8iq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gmB-nM-XEF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Ow-zw-SH8"/>
                             <constraint firstItem="gmB-nM-XEF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KdJ-lM-CME"/>
+                            <constraint firstItem="N7W-dj-nsn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cq4-Gj-Osd"/>
+                            <constraint firstItem="N7W-dj-nsn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="te0-ff-rYA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imgLoad" destination="N7W-dj-nsn" id="xfX-V7-rCd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

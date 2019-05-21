@@ -10,6 +10,8 @@ import UIKit
 
 class CoreDataTesterViewController: UIViewController {
     
+    @IBOutlet weak var imgLoad: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,5 +36,14 @@ class CoreDataTesterViewController: UIViewController {
             debugPrint("\(String(describing: producto.name)) a  \(producto.price) desc: \(String(describing: producto.desc))")
         }
     }
+    
+    @IBAction func btnLoadImagePressed(_ sender: Any) {
+        for producto in Product.all where producto.thumb != nil {
+            if let dataJpeg = producto.thumb {
+                imgLoad.image = UIImage(data: Data(referencing: dataJpeg))
+            }
+        }
+    }
+    
 }
 

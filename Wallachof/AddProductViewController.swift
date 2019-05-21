@@ -93,7 +93,9 @@ extension AddProductViewController: UIImagePickerControllerDelegate {
 //            // dataPng de tipo Data
 //        }
         
-        if let dataJpeg = selectedImage.jpegData(compressionQuality: 0.8) {
+        let thumbImage = selectedImage.resizeImage(targetSize: CGSize(width: 100, height: 100))
+        
+        if let dataJpeg = thumbImage.jpegData(compressionQuality: 0.8) {
             // dataJpeg de tipo Data
             flores.thumb = NSData(data: dataJpeg)
         }
