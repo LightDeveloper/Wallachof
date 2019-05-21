@@ -76,18 +76,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zXu-xw-C4t">
-                                <rect key="frame" x="57" y="84" width="300" height="300"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJT-WA-FHE">
+                                <rect key="frame" x="47" y="44" width="320" height="798"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GoD-HL-2bW">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="670"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zXu-xw-C4t">
+                                                <rect key="frame" x="35" y="0.0" width="250" height="250"/>
+                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="zXu-xw-C4t" secondAttribute="height" multiplier="1:1" id="Y1B-kV-xCZ"/>
+                                                    <constraint firstAttribute="height" constant="250" id="pDk-6x-vUX"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="4u3-6X-dnx" appends="YES" id="LrH-Sa-IiL"/>
+                                                </connections>
+                                            </imageView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItJ-IN-d1n">
+                                                <rect key="frame" x="0.0" y="258" width="320" height="216"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="huC-q6-YaV"/>
+                                                </constraints>
+                                            </pickerView>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Prt-pA-QVM">
+                                                <rect key="frame" x="10" y="482" width="300" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="Klc-nw-G5l"/>
+                                                    <constraint firstAttribute="height" constant="150" id="pp8-E5-k4k"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="580152010.453511">
+                                                    <!--2019-05-21 17:20:10 +0000-->
+                                                </date>
+                                                <connections>
+                                                    <action selector="pickerEndAddChanged:" destination="1IL-Hp-6QI" eventType="valueChanged" id="i5p-Le-SWa"/>
+                                                </connections>
+                                            </datePicker>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="Descripción" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-rG-Tcc">
+                                                <rect key="frame" x="20" y="640" width="280" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="continue" textContentType="name"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="8aA-rG-Tcc" firstAttribute="leading" secondItem="GoD-HL-2bW" secondAttribute="leading" constant="20" id="dvP-7b-2lV"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37959761539999998" green="1" blue="0.9658241742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Ckg-Ia-iDT"/>
-                                    <constraint firstAttribute="width" secondItem="zXu-xw-C4t" secondAttribute="height" multiplier="1:1" id="Y1B-kV-xCZ"/>
+                                    <constraint firstAttribute="width" secondItem="ItJ-IN-d1n" secondAttribute="width" id="9Gx-r2-YN0"/>
+                                    <constraint firstItem="GoD-HL-2bW" firstAttribute="leading" secondItem="tJT-WA-FHE" secondAttribute="leading" id="R6c-75-14l"/>
+                                    <constraint firstAttribute="trailing" secondItem="GoD-HL-2bW" secondAttribute="trailing" id="drH-w1-GIy"/>
+                                    <constraint firstAttribute="bottom" secondItem="GoD-HL-2bW" secondAttribute="bottom" id="kJu-2k-MMa"/>
+                                    <constraint firstItem="GoD-HL-2bW" firstAttribute="top" secondItem="tJT-WA-FHE" secondAttribute="top" id="wd4-YW-Mf4"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="4u3-6X-dnx" appends="YES" id="LrH-Sa-IiL"/>
-                                </connections>
-                            </imageView>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8I-Aq-7O1">
                                 <rect key="frame" x="364" y="832" width="30" height="30"/>
                                 <state key="normal" title="Test"/>
@@ -95,33 +140,15 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="ref-q7-f2u"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Prt-pA-QVM">
-                                <rect key="frame" x="57" y="712" width="300" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Klc-nw-G5l"/>
-                                    <constraint firstAttribute="height" constant="150" id="pp8-E5-k4k"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="580152010.453511">
-                                    <!--2019-05-21 17:20:10 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="pickerEndAddChanged:" destination="1IL-Hp-6QI" eventType="valueChanged" id="i5p-Le-SWa"/>
-                                </connections>
-                            </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItJ-IN-d1n">
-                                <rect key="frame" x="47" y="476" width="320" height="216"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="i8I-Aq-7O1" firstAttribute="bottom" secondItem="x1U-6p-gTb" secondAttribute="bottom" id="16O-7j-EDi"/>
-                            <constraint firstItem="Prt-pA-QVM" firstAttribute="top" secondItem="ItJ-IN-d1n" secondAttribute="bottom" constant="20" id="Hfs-k0-RXH"/>
-                            <constraint firstItem="Prt-pA-QVM" firstAttribute="centerX" secondItem="Lt3-7o-NOX" secondAttribute="centerX" id="M1a-IM-PYX"/>
-                            <constraint firstItem="ItJ-IN-d1n" firstAttribute="centerX" secondItem="Prt-pA-QVM" secondAttribute="centerX" id="UqU-TP-s6P"/>
+                            <constraint firstItem="tJT-WA-FHE" firstAttribute="top" secondItem="x1U-6p-gTb" secondAttribute="top" id="Aan-rj-faA"/>
+                            <constraint firstItem="tJT-WA-FHE" firstAttribute="centerX" secondItem="Lt3-7o-NOX" secondAttribute="centerX" id="Kl6-l3-BM5"/>
+                            <constraint firstItem="x1U-6p-gTb" firstAttribute="bottom" secondItem="tJT-WA-FHE" secondAttribute="bottom" constant="20" id="Ts7-Ks-Px7"/>
                             <constraint firstItem="x1U-6p-gTb" firstAttribute="trailing" secondItem="i8I-Aq-7O1" secondAttribute="trailing" constant="20" id="VJu-Im-BJD"/>
-                            <constraint firstItem="Prt-pA-QVM" firstAttribute="bottom" secondItem="x1U-6p-gTb" secondAttribute="bottom" id="a2Y-l5-AH9"/>
-                            <constraint firstItem="zXu-xw-C4t" firstAttribute="centerX" secondItem="Lt3-7o-NOX" secondAttribute="centerX" id="mEb-K4-vKr"/>
-                            <constraint firstItem="zXu-xw-C4t" firstAttribute="top" secondItem="x1U-6p-gTb" secondAttribute="top" constant="40" id="yLs-je-YlT"/>
+                            <constraint firstItem="i8I-Aq-7O1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x1U-6p-gTb" secondAttribute="leading" constant="20" id="kSU-4d-QSx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x1U-6p-gTb"/>
                     </view>

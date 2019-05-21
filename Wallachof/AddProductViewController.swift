@@ -28,8 +28,14 @@ class AddProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name(rawValue: "keyboardWillShowNotification"), object: nil)
+        
         pickerCategory.delegate = self
         pickerCategory.dataSource = self
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        debugPrint("El teclado va a salir")
     }
     
     @IBAction func tapDetected(_ sender: UITapGestureRecognizer) {
