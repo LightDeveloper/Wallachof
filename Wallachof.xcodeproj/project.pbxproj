@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8512292F2950000C029 /* AppDelegate.swift */; };
-		D90FB8542292F2950000C029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8532292F2950000C029 /* ViewController.swift */; };
+		D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */; };
 		D90FB8572292F2950000C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90FB8552292F2950000C029 /* Main.storyboard */; };
 		D90FB85A2292F2950000C029 /* Wallachof.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8582292F2950000C029 /* Wallachof.xcdatamodeld */; };
 		D90FB85C2292F29F0000C029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90FB85B2292F29F0000C029 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		D90FB84E2292F2950000C029 /* Wallachof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallachof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90FB8512292F2950000C029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D90FB8532292F2950000C029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTesterViewController.swift; sourceTree = "<group>"; };
 		D90FB8562292F2950000C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D90FB8592292F2950000C029 /* Wallachof.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wallachof.xcdatamodel; sourceTree = "<group>"; };
 		D90FB85B2292F29F0000C029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			children = (
 				D91D6A49229307B300947268 /* CoreData */,
 				D90FB8512292F2950000C029 /* AppDelegate.swift */,
-				D90FB8532292F2950000C029 /* ViewController.swift */,
+				D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */,
 				D90FB8552292F2950000C029 /* Main.storyboard */,
 				D9DB109F2294426C008FFB0F /* AddProductViewController.swift */,
 				D90FB85B2292F29F0000C029 /* Assets.xcassets */,
@@ -161,7 +161,7 @@
 				D9F8F79F229329BC007B8FAE /* CoreDataManager.swift in Sources */,
 				D9DB10A02294426C008FFB0F /* AddProductViewController.swift in Sources */,
 				D91D6A4F2293088A00947268 /* Product+CoreDataProperties.swift in Sources */,
-				D90FB8542292F2950000C029 /* ViewController.swift in Sources */,
+				D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */,
 				D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */,
 				D90FB85A2292F2950000C029 /* Wallachof.xcdatamodeld in Sources */,
 				D91D6A4E2293088300947268 /* Product+CoreDataClass.swift in Sources */,
@@ -241,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -296,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

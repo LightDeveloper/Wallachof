@@ -10,6 +10,13 @@ import UIKit
 
 class AddProductViewController: UIViewController {
 
+    enum ImageSource {
+        case photoLibrary
+        case camera
+    }
+    
+    var imagePicker: UIImagePickerController!
+    
     @IBOutlet weak var imgProduct: UIImageView!
     
     override func viewDidLoad() {
@@ -24,20 +31,75 @@ class AddProductViewController: UIViewController {
     }
     
     func showPictureSourceAlert() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Abrir cámara", style: .default) { (alert) in
-            // TODO: Abrir la cámara
-            debugPrint("Abriría la cámara")
-        }
-        alert.addAction(cameraAction)
-        let albumAction = UIAlertAction(title: "Abrir álbum", style: .default) { (alert) in
-            // TODO: Abrir la galería
-            debugPrint("Abriría la galería")
-        }
-        alert.addAction(albumAction)
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
-        alert.addAction(cancelAction)
         
-        present(alert, animated: true)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let cameraAction = UIAlertAction(title: "Abrir cámara", style: .default) { (alert) in
+                self.selectImageFrom(.camera)
+            }
+            alert.addAction(cameraAction)
+            let albumAction = UIAlertAction(title: "Abrir álbum", style: .default) { (alert) in
+                self.selectImageFrom(.photoLibrary)
+            }
+            alert.addAction(albumAction)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true)
+        } else {
+            selectImageFrom(.photoLibrary)
+        }
     }
+    
+    func selectImageFrom(_ source: ImageSource) {
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
+        switch source {
+        case .camera:
+            imagePicker.sourceType = .camera
+        case .photoLibrary:
+            imagePicker.sourceType = .photoLibrary
+        }
+        
+        present(imagePicker, animated: true)
+    }
+}
+
+extension AddProductViewController: UINavigationControllerDelegate {
+    
+}
+
+extension AddProductViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true)
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            debugPrint("ERROR No pude obtener la imagen")
+            return
+        }
+        imgProduct.image = selectedImage
+        
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let flores = Product(context: context)
+        flores.name = "Flower power"
+        flores.desc = "Mogollón de alergia para tu nariz"
+        flores.price = 500.0
+        
+//        if let dataPng = selectedImage.pngData() {
+//            // dataPng de tipo Data
+//        }
+        
+        if let dataJpeg = selectedImage.jpegData(compressionQuality: 0.8) {
+            // dataJpeg de tipo Data
+            flores.thumb = NSData(data: dataJpeg)
+        }
+        
+        CoreDataManager.shared.saveContext()
+    }
+    
+    
 }
