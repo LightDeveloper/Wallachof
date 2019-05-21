@@ -15,14 +15,21 @@ class AddProductViewController: UIViewController {
         case camera
     }
     
+    let categorias0 = ["móvil", "ordenador", "consola"]
+    let categorias1 = ["ropa", "zapatos", "torrijas", "cinturones"]
+
     var imagePicker: UIImagePickerController!
     
     @IBOutlet weak var imgProduct: UIImageView!
     
+    @IBOutlet weak var pickerEndAdd: UIDatePicker!
+    @IBOutlet weak var pickerCategory: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        pickerCategory.delegate = self
+        pickerCategory.dataSource = self
     }
     
     @IBAction func tapDetected(_ sender: UITapGestureRecognizer) {
@@ -65,6 +72,61 @@ class AddProductViewController: UIViewController {
         
         present(imagePicker, animated: true)
     }
+    
+    
+    @IBAction func pickerEndAddChanged(_ sender: UIDatePicker) {
+        debugPrint("Fecha \(sender.date)")
+    }
+
+}
+
+extension AddProductViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return categorias0.count
+        } else  {
+            return categorias1.count
+        }
+    }
+}
+
+extension AddProductViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        switch component {
+        case 0:
+            return categorias0[row]
+        case 1:
+            return categorias1[row]
+        default:
+            debugPrint("Error no debería llegar")
+            return "no existe"
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+        let fila0 = pickerView.selectedRow(inComponent: 0)
+        let fila1 = pickerView.selectedRow(inComponent: 1)
+        debugPrint("Todos \(categorias0[fila0]) y \(categorias1[fila1])")
+        
+        switch component {
+        case 0:
+            debugPrint("Un solo \(categorias0[row])")
+        case 1:
+            debugPrint("Un solo \(categorias1[row])")
+        default:
+            debugPrint("Error no debería llegar")
+         }
+    }
+    
 }
 
 extension AddProductViewController: UINavigationControllerDelegate {
