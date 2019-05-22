@@ -82,8 +82,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GoD-HL-2bW">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="670"/>
                                         <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-rG-Tcc">
+                                                <rect key="frame" x="20" y="0.0" width="280" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue"/>
+                                            </textField>
                                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zXu-xw-C4t">
-                                                <rect key="frame" x="35" y="0.0" width="250" height="250"/>
+                                                <rect key="frame" x="35" y="38" width="250" height="250"/>
                                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -95,13 +100,13 @@
                                                 </connections>
                                             </imageView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItJ-IN-d1n">
-                                                <rect key="frame" x="0.0" y="258" width="320" height="216"/>
+                                                <rect key="frame" x="0.0" y="296" width="320" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="320" id="huC-q6-YaV"/>
                                                 </constraints>
                                             </pickerView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Prt-pA-QVM">
-                                                <rect key="frame" x="10" y="482" width="300" height="150"/>
+                                                <rect key="frame" x="10" y="520" width="300" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="Klc-nw-G5l"/>
                                                     <constraint firstAttribute="height" constant="150" id="pp8-E5-k4k"/>
@@ -113,11 +118,6 @@
                                                     <action selector="pickerEndAddChanged:" destination="1IL-Hp-6QI" eventType="valueChanged" id="i5p-Le-SWa"/>
                                                 </connections>
                                             </datePicker>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="Descripción" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-rG-Tcc">
-                                                <rect key="frame" x="20" y="640" width="280" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="continue" textContentType="name"/>
-                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="8aA-rG-Tcc" firstAttribute="leading" secondItem="GoD-HL-2bW" secondAttribute="leading" constant="20" id="dvP-7b-2lV"/>
@@ -156,6 +156,8 @@
                         <outlet property="imgProduct" destination="zXu-xw-C4t" id="l3a-mk-UPs"/>
                         <outlet property="pickerCategory" destination="ItJ-IN-d1n" id="ZN8-wh-qB9"/>
                         <outlet property="pickerEndAdd" destination="Prt-pA-QVM" id="loZ-Dt-PkW"/>
+                        <outlet property="scrollForm" destination="tJT-WA-FHE" id="k9S-kX-wg3"/>
+                        <outlet property="txtfName" destination="8aA-rG-Tcc" id="ddm-AP-eBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8V-Wy-GtM" userLabel="First Responder" sceneMemberID="firstResponder"/>

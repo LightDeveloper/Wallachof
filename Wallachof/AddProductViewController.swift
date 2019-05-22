@@ -20,24 +20,53 @@ class AddProductViewController: UIViewController {
 
     var imagePicker: UIImagePickerController!
     
+    @IBOutlet weak var scrollForm: UIScrollView!
     @IBOutlet weak var imgProduct: UIImageView!
     
     @IBOutlet weak var pickerEndAdd: UIDatePicker!
     @IBOutlet weak var pickerCategory: UIPickerView!
+    @IBOutlet weak var txtfName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name(rawValue: "keyboardWillShowNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        txtfName.delegate = self
         pickerCategory.delegate = self
         pickerCategory.dataSource = self
     }
     
     @objc func keyboardWillShow(notification: Notification) {
+        adjustScrollForKeyboardShow(true, notification: notification)
         debugPrint("El teclado va a salir")
     }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        adjustScrollForKeyboardShow(false, notification: notification)
+        debugPrint("El teclado va a ocultar")
+    }
     
+    func adjustScrollForKeyboardShow(_ show: Bool, notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let frameValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+            else {
+                return
+        }
+        
+        let keyboardFrame = frameValue.cgRectValue
+        var adjustInset: CGFloat = 0.0
+        if show {
+            adjustInset = keyboardFrame.height
+        } else {
+            adjustInset = -keyboardFrame.height
+        }
+        scrollForm.contentInset.bottom = adjustInset
+        scrollForm.scrollIndicatorInsets.bottom = adjustInset
+    }
+
     @IBAction func tapDetected(_ sender: UITapGestureRecognizer) {
         debugPrint("Han hecho tap \(sender.numberOfTouches)")
         showPictureSourceAlert()
@@ -79,11 +108,21 @@ class AddProductViewController: UIViewController {
         present(imagePicker, animated: true)
     }
     
-    
     @IBAction func pickerEndAddChanged(_ sender: UIDatePicker) {
         debugPrint("Fecha \(sender.date)")
     }
+}
 
+
+extension AddProductViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+//        textField.endEditing(true)
+        
+        return true
+    }
+    
 }
 
 extension AddProductViewController: UIPickerViewDataSource {
@@ -136,7 +175,7 @@ extension AddProductViewController: UIPickerViewDelegate {
 }
 
 extension AddProductViewController: UINavigationControllerDelegate {
-    
+    // Necesario para el image picker, pero en este caso no se usa
 }
 
 extension AddProductViewController: UIImagePickerControllerDelegate {
