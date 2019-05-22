@@ -26,10 +26,20 @@ class MapViewController: UIViewController {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
         }
+        
+    }
+    
+    func addChuchelandia() {
+        let coord = CLLocationCoordinate2D(latitude: 40.292596, longitude: -3.745971)
+        let poi = PointOfInterest(title: "Chuchelandia",
+                                  subtitle: "Se te hace el chuche agua",
+                                  coordinate: coord)
+
+        mapProduct.addAnnotation(poi)
     }
     
     func centerMapOnLocation(_ location: CLLocationCoordinate2D) {
-        let region = MKCoordinateRegion(center: location, latitudinalMeters: 400.0, longitudinalMeters: 400.0)
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 200.0, longitudinalMeters: 200.0)
         mapProduct.setRegion(region, animated: true)
     }
 }
@@ -47,10 +57,32 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation){
         debugPrint("didUpdate \(userLocation.coordinate)")
         centerMapOnLocation(userLocation.coordinate)
+        addChuchelandia()
     }
     
     func mapView(_ mapView: MKMapView, didFailToLocateUserWithError error: Error) {
         debugPrint("didFailToLocateUserWithError")
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        debugPrint("Annotation \(type(of: annotation))")
+        
+        guard let annotation = annotation as? PointOfInterest else {
+            return nil
+        }
+        let identifier = "poiId"
+        var view: MKMarkerAnnotationView
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
     }
     
 }
