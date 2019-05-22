@@ -183,12 +183,35 @@
                                     <constraint firstAttribute="height" constant="400" id="v9u-yP-QKt"/>
                                 </constraints>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETl-uz-dEG" customClass="PressableButton" customModule="SwiftyButton">
+                                <rect key="frame" x="150.5" y="447" width="113" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Boton con carga">
+                                    <color key="titleColor" red="1" green="1" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnCargaPressed:" destination="5Bg-Wf-DGM" eventType="touchUpInside" id="8d5-Ff-FtJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QdB-CP-TmD" firstAttribute="trailing" secondItem="buu-mf-4Y0" secondAttribute="trailing" id="Oh0-NH-kpp"/>
                             <constraint firstItem="buu-mf-4Y0" firstAttribute="top" secondItem="2D2-h1-R8W" secondAttribute="top" id="YYr-k1-bmZ"/>
+                            <constraint firstItem="ETl-uz-dEG" firstAttribute="top" secondItem="buu-mf-4Y0" secondAttribute="bottom" constant="47" id="n1A-Ya-s77"/>
                             <constraint firstItem="buu-mf-4Y0" firstAttribute="leading" secondItem="QdB-CP-TmD" secondAttribute="leading" id="wHo-eQ-Pmp"/>
+                            <constraint firstItem="ETl-uz-dEG" firstAttribute="centerX" secondItem="2D2-h1-R8W" secondAttribute="centerX" id="znj-P0-AR0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QdB-CP-TmD"/>
                     </view>

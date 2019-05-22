@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390206220D47C7F79EEBF288 /* Pods_Wallachof.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FE9633A6499B404BB55D3A /* Pods_Wallachof.framework */; };
 		D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8512292F2950000C029 /* AppDelegate.swift */; };
 		D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */; };
 		D90FB8572292F2950000C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90FB8552292F2950000C029 /* Main.storyboard */; };
@@ -24,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81FE9633A6499B404BB55D3A /* Pods_Wallachof.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallachof.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE5B54DF8B0BC69F758A0992 /* Pods-Wallachof.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallachof.release.xcconfig"; path = "Target Support Files/Pods-Wallachof/Pods-Wallachof.release.xcconfig"; sourceTree = "<group>"; };
+		D11383B5CC04443D89C75BA9 /* Pods-Wallachof.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallachof.debug.xcconfig"; path = "Target Support Files/Pods-Wallachof/Pods-Wallachof.debug.xcconfig"; sourceTree = "<group>"; };
 		D90FB84E2292F2950000C029 /* Wallachof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallachof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90FB8512292F2950000C029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTesterViewController.swift; sourceTree = "<group>"; };
@@ -48,18 +52,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				D942EC832295A162000E7FF8 /* MapKit.framework in Frameworks */,
+				390206220D47C7F79EEBF288 /* Pods_Wallachof.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6AD63FFB91A6DF6A6F3B304 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D11383B5CC04443D89C75BA9 /* Pods-Wallachof.debug.xcconfig */,
+				AE5B54DF8B0BC69F758A0992 /* Pods-Wallachof.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D90FB8452292F2940000C029 = {
 			isa = PBXGroup;
 			children = (
 				D90FB8502292F2950000C029 /* Wallachof */,
 				D90FB84F2292F2950000C029 /* Products */,
 				D942EC7F2295A120000E7FF8 /* Frameworks */,
+				B6AD63FFB91A6DF6A6F3B304 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D942EC822295A162000E7FF8 /* MapKit.framework */,
+				81FE9633A6499B404BB55D3A /* Pods_Wallachof.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D90FB8632292F29F0000C029 /* Build configuration list for PBXNativeTarget "Wallachof" */;
 			buildPhases = (
+				DB4798B4FF0A0CE3C4E08F4B /* [CP] Check Pods Manifest.lock */,
 				D90FB84A2292F2950000C029 /* Sources */,
 				D90FB84B2292F2950000C029 /* Frameworks */,
 				D90FB84C2292F2950000C029 /* Resources */,
+				B13D801626F949CD526E4F4D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +205,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B13D801626F949CD526E4F4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wallachof/Pods-Wallachof-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wallachof/Pods-Wallachof-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wallachof/Pods-Wallachof-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB4798B4FF0A0CE3C4E08F4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wallachof-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D90FB84A2292F2950000C029 /* Sources */ = {
@@ -347,6 +408,7 @@
 		};
 		D90FB8642292F29F0000C029 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11383B5CC04443D89C75BA9 /* Pods-Wallachof.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +427,7 @@
 		};
 		D90FB8652292F29F0000C029 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE5B54DF8B0BC69F758A0992 /* Pods-Wallachof.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

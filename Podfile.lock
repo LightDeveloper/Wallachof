@@ -1,0 +1,20 @@
+PODS:
+  - SideMenu (5.0.2)
+  - SwiftyButton (0.8.2)
+
+DEPENDENCIES:
+  - SideMenu
+  - SwiftyButton
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SideMenu
+    - SwiftyButton
+
+SPEC CHECKSUMS:
+  SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
+  SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
+
+PODFILE CHECKSUM: c754ad6ed6781ce94e26f45aa8dd07f9cab87afb
+
+COCOAPODS: 1.7.0

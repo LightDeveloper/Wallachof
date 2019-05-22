@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SwiftyButton
+
 
 class MapViewController: UIViewController {
 
@@ -42,6 +44,11 @@ class MapViewController: UIViewController {
         let region = MKCoordinateRegion(center: location, latitudinalMeters: 200.0, longitudinalMeters: 200.0)
         mapProduct.setRegion(region, animated: true)
     }
+    
+    @IBAction func btnCargaPressed(_ sender: PressableButton) {
+        sender.colors = .init(button: .cyan, shadow: .blue)
+    }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -78,8 +85,10 @@ extension MapViewController: MKMapViewDelegate {
             view = dequeuedView
         } else {
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "drogoncito")
             view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
+            
+//            view.calloutOffset = CGPoint(x: -50, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         return view
