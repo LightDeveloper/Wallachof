@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,7 +65,6 @@
 				D11383B5CC04443D89C75BA9 /* Pods-Wallachof.debug.xcconfig */,
 				AE5B54DF8B0BC69F758A0992 /* Pods-Wallachof.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,6 +166,7 @@
 				TargetAttributes = {
 					D90FB84D2292F2950000C029 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;

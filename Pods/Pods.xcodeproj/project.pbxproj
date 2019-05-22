@@ -46,10 +46,10 @@
 
 /* Begin PBXFileReference section */
 		08AFAA0A1CAC51A2C7352E1CF749C639 /* Pods-Wallachof-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wallachof-acknowledgements.plist"; sourceTree = "<group>"; };
-		0A2F0E338CE30A7CA2E4D0F684231DC4 /* SwiftyButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyButton.framework; path = SwiftyButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2F0E338CE30A7CA2E4D0F684231DC4 /* SwiftyButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E633E72FE093238A08A9DFC6E514703 /* Pods-Wallachof.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Wallachof.modulemap"; sourceTree = "<group>"; };
 		15D9967F67B636155422C824464F26CB /* CustomPressableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomPressableButton.swift; path = SwiftyButton/CustomPressableButton.swift; sourceTree = "<group>"; };
-		21417B2DAAA05504269587ADFC60873D /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21417B2DAAA05504269587ADFC60873D /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2230F83E9C8E7C34B39064FA1B2DDA51 /* Pods-Wallachof-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Wallachof-umbrella.h"; sourceTree = "<group>"; };
 		27DC5A1EA18962F9C4920C8D55800DE8 /* Pods-Wallachof-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Wallachof-acknowledgements.markdown"; sourceTree = "<group>"; };
 		28FE4FADCE5EB5763C44D327DCCFB51A /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
@@ -69,9 +69,9 @@
 		82C3E731DE53670C0E97F58F4BE8E950 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = SwiftyButton/Utils.swift; sourceTree = "<group>"; };
 		92BB2BB21E00DDFD922946C160ADBC62 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
 		9BEE8A5D72D9BD7445231466D55F8F20 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F906DD82FAC8943B8280A69416F8795 /* Pods-Wallachof.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wallachof.debug.xcconfig"; sourceTree = "<group>"; };
-		AE1BA63BB3E56026B408173EF96665C9 /* Pods_Wallachof.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Wallachof.framework; path = "Pods-Wallachof.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE1BA63BB3E56026B408173EF96665C9 /* Pods_Wallachof.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallachof.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D62D2B82593EAAE42646ECE2DC5878 /* SwiftyButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyButton-dummy.m"; sourceTree = "<group>"; };
 		D4202947749177F644AB62E5CEB024DF /* Pods-Wallachof-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wallachof-frameworks.sh"; sourceTree = "<group>"; };
 		DB02BB7B9F8734CCA1241F78F03015F6 /* SwiftyButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyButton-prefix.pch"; sourceTree = "<group>"; };
@@ -120,7 +120,6 @@
 				82C3E731DE53670C0E97F58F4BE8E950 /* Utils.swift */,
 				33E577251BA061C765EBDFAFFCF0F656 /* Support Files */,
 			);
-			name = SwiftyButton;
 			path = SwiftyButton;
 			sourceTree = "<group>";
 		};
@@ -169,7 +168,6 @@
 				70C1CF4A1650D5C861636916AD7D0336 /* UITableViewVibrantCell.swift */,
 				74694741E9F0FAC9891CC1D91C8FD663 /* Support Files */,
 			);
-			name = SideMenu;
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
@@ -331,6 +329,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+					07475AE230BC4F14EC23ECC801F02059 = {
+						LastSwiftMigration = 1020;
+					};
+					C4A0A7D8591B67FB75E2E8D215E3735B = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
