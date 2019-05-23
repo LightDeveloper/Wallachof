@@ -97,13 +97,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwo-fA-I7V">
+                                <rect key="frame" x="140" y="369" width="40" height="30"/>
+                                <state key="normal" title="about"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66185873045910348" green="0.97680455450000003" blue="0.67187399681855475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nDw-j9-BWb" firstAttribute="centerX" secondItem="tdc-CY-bfc" secondAttribute="centerX" id="Bjg-hb-460"/>
                             <constraint firstItem="hQ5-47-4QK" firstAttribute="centerX" secondItem="nDw-j9-BWb" secondAttribute="centerX" id="IzE-jn-ax6"/>
                             <constraint firstItem="nDw-j9-BWb" firstAttribute="top" secondItem="tdc-CY-bfc" secondAttribute="top" constant="21" id="Q1a-DP-hjO"/>
+                            <constraint firstItem="Jwo-fA-I7V" firstAttribute="centerX" secondItem="Eg5-XD-Uc3" secondAttribute="centerX" id="ZxG-4Y-Ssi"/>
                             <constraint firstItem="Eg5-XD-Uc3" firstAttribute="top" secondItem="hQ5-47-4QK" secondAttribute="bottom" constant="40" id="asl-yR-rsr"/>
+                            <constraint firstItem="Jwo-fA-I7V" firstAttribute="top" secondItem="Eg5-XD-Uc3" secondAttribute="bottom" constant="37.5" id="geB-br-Uyv"/>
                             <constraint firstItem="Eg5-XD-Uc3" firstAttribute="centerX" secondItem="hQ5-47-4QK" secondAttribute="centerX" id="nrE-HN-tu7"/>
                             <constraint firstItem="hQ5-47-4QK" firstAttribute="top" secondItem="nDw-j9-BWb" secondAttribute="bottom" constant="23" id="v5j-dj-fK2"/>
                         </constraints>

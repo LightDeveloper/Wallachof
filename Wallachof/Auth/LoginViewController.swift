@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
     }
     
     func setupLanguage() {
-        lblEmail.text = "email".localize()
-        lblPassword.text = "password".localize()
+//        lblEmail.text = "email".localize()
+//        lblPassword.text = "password".localize()
         btnLogin.setTitle("login".localize(), for: .normal)
     }
     
