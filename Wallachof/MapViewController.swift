@@ -48,7 +48,6 @@ class MapViewController: UIViewController {
     @IBAction func btnCargaPressed(_ sender: PressableButton) {
         sender.colors = .init(button: .cyan, shadow: .blue)
     }
-    
 }
 
 extension MapViewController: MKMapViewDelegate {
