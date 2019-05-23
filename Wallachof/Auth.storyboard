@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WallaChof" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-j9-BWb">
-                                <rect key="frame" x="121" y="41" width="78" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WALLACHOF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-j9-BWb">
+                                <rect key="frame" x="84.5" y="41" width="151.5" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-47-4QK" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
-                                <rect key="frame" x="16" y="84.5" width="288" height="162"/>
+                                <rect key="frame" x="16" y="89.5" width="288" height="162"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G97-xy-deC">
                                         <rect key="frame" x="20" y="20" width="248" height="122"/>
@@ -64,11 +64,6 @@
                                             <constraint firstAttribute="trailing" secondItem="dds-eG-H8w" secondAttribute="trailing" id="k9B-B5-wak"/>
                                             <constraint firstItem="TN7-32-jhP" firstAttribute="leading" secondItem="G97-xy-deC" secondAttribute="leading" id="sET-4k-0q4"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="border">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,19 +75,30 @@
                                     <constraint firstAttribute="bottom" secondItem="G97-xy-deC" secondAttribute="bottom" constant="20" id="upS-ge-o4I"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="border">
-                                        <real key="value" value="3.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addBorder" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addBorder" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-XD-Uc3" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="139" y="286.5" width="42" height="30"/>
-                                <state key="normal" title="Entrar"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-XD-Uc3" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
+                                <rect key="frame" x="120" y="291.5" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q3o-qn-TLd"/>
+                                    <constraint firstAttribute="width" constant="80" id="iVk-Qv-YHl"/>
+                                </constraints>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.66185873045910348" green="0.97680455450000003" blue="0.67187399681855475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nDw-j9-BWb" firstAttribute="centerX" secondItem="tdc-CY-bfc" secondAttribute="centerX" id="Bjg-hb-460"/>
                             <constraint firstItem="hQ5-47-4QK" firstAttribute="centerX" secondItem="nDw-j9-BWb" secondAttribute="centerX" id="IzE-jn-ax6"/>
