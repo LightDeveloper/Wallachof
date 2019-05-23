@@ -19,13 +19,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupStyles()
     }
-    
-    func setupStyles() {
-        view.addStripesBackground()
-        viewForm.addShadow()
-    }
-    
+
 }

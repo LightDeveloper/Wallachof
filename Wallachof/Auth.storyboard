@@ -13,7 +13,7 @@
         <scene sceneID="kLg-Zx-1q5">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="dcz-fA-qnW" customClass="LoginViewController" customModule="Wallachof" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="88u-um-4CM">
+                    <view key="view" contentMode="scaleToFill" id="88u-um-4CM" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -23,7 +23,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-47-4QK">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-47-4QK" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
                                 <rect key="frame" x="16" y="84.5" width="288" height="162"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G97-xy-deC">
@@ -83,6 +83,8 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="border">
                                         <real key="value" value="3.5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addBorder" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-XD-Uc3" customClass="PressableButton" customModule="SwiftyButton">
@@ -100,6 +102,11 @@
                             <constraint firstItem="hQ5-47-4QK" firstAttribute="top" secondItem="nDw-j9-BWb" secondAttribute="bottom" constant="23" id="v5j-dj-fK2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tdc-CY-bfc"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="addBorder" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="NO"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="addBackgroundPattern" value="bg-login"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="nsu-Dn-oWj"/>
                     <connections>
