@@ -22,6 +22,8 @@
 		D968D76622970FFA002C1D10 /* Splatch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D968D76522970FFA002C1D10 /* Splatch.ttf */; };
 		D968D769229710D3002C1D10 /* PressableStylized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968D768229710D3002C1D10 /* PressableStylized.swift */; };
 		D968D76B229712D0002C1D10 /* UIColor+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968D76A229712D0002C1D10 /* UIColor+Styles.swift */; };
+		D968D76E22971DA8002C1D10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D968D77022971DA9002C1D10 /* Localizable.strings */; };
+		D968D77322972107002C1D10 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968D77222972107002C1D10 /* String+Localized.swift */; };
 		D9DB10A02294426C008FFB0F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB109F2294426C008FFB0F /* AddProductViewController.swift */; };
 		D9DB10A322945D65008FFB0F /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */; };
 		D9F8B20D2296F2C70054FC3F /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8B20C2296F2C70054FC3F /* Auth.storyboard */; };
@@ -50,6 +52,9 @@
 		D968D76522970FFA002C1D10 /* Splatch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splatch.ttf; sourceTree = "<group>"; };
 		D968D768229710D3002C1D10 /* PressableStylized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableStylized.swift; sourceTree = "<group>"; };
 		D968D76A229712D0002C1D10 /* UIColor+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styles.swift"; sourceTree = "<group>"; };
+		D968D76F22971DA9002C1D10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D968D77122971E28002C1D10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D968D77222972107002C1D10 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		D9DB109F2294426C008FFB0F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		D9F8B20C2296F2C70054FC3F /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 				D90FB85D2292F29F0000C029 /* LaunchScreen.storyboard */,
 				D90FB8602292F29F0000C029 /* Info.plist */,
 				D90FB8582292F2950000C029 /* Wallachof.xcdatamodeld */,
+				D968D77022971DA9002C1D10 /* Localizable.strings */,
 			);
 			path = Wallachof;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F8B2112296FD740054FC3F /* LoginViewController.swift */,
+				D968D77222972107002C1D10 /* String+Localized.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = D90FB8452292F2940000C029;
 			productRefGroup = D90FB84F2292F2950000C029 /* Products */;
@@ -233,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F8B20D2296F2C70054FC3F /* Auth.storyboard in Resources */,
+				D968D76E22971DA8002C1D10 /* Localizable.strings in Resources */,
 				D968D76622970FFA002C1D10 /* Splatch.ttf in Resources */,
 				D90FB85F2292F29F0000C029 /* LaunchScreen.storyboard in Resources */,
 				D90FB85C2292F29F0000C029 /* Assets.xcassets in Resources */,
@@ -298,6 +307,7 @@
 				D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */,
 				D942EC7E2295A07A000E7FF8 /* MapViewController.swift in Sources */,
 				D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */,
+				D968D77322972107002C1D10 /* String+Localized.swift in Sources */,
 				D9DB10A322945D65008FFB0F /* UIImage+Resize.swift in Sources */,
 				D942EC852295AC15000E7FF8 /* PointOfInterest.swift in Sources */,
 				D968D769229710D3002C1D10 /* PressableStylized.swift in Sources */,
@@ -325,6 +335,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		D968D77022971DA9002C1D10 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D968D76F22971DA9002C1D10 /* en */,
+				D968D77122971E28002C1D10 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -332,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -394,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

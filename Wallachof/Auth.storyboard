@@ -85,7 +85,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Q3o-qn-TLd"/>
                                     <constraint firstAttribute="width" constant="80" id="iVk-Qv-YHl"/>
                                 </constraints>
-                                <state key="normal" title="Entrar">
+                                <state key="normal" title="login">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -116,7 +116,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="nsu-Dn-oWj"/>
                     <connections>
+                        <outlet property="btnLogin" destination="Eg5-XD-Uc3" id="wUL-hu-gDp"/>
+                        <outlet property="consButtonCenter" destination="nrE-HN-tu7" id="F8C-F8-jxC"/>
+                        <outlet property="consButtonWidth" destination="iVk-Qv-YHl" id="Ydz-qe-HsP"/>
+                        <outlet property="lblEmail" destination="TN7-32-jhP" id="FfH-9L-feH"/>
                         <outlet property="lblLogo" destination="nDw-j9-BWb" id="HK8-AB-eDi"/>
+                        <outlet property="lblPassword" destination="dds-eG-H8w" id="EJv-qB-wPI"/>
                         <outlet property="txtfEmail" destination="qtt-9w-JIF" id="jlj-kE-jcL"/>
                         <outlet property="txtfPassword" destination="S7K-AQ-354" id="ctJ-gx-yHh"/>
                         <outlet property="viewForm" destination="hQ5-47-4QK" id="NsD-oC-3Ct"/>
