@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var animationStarted = false
     
     @IBOutlet weak var lblLogo: UILabel!
     @IBOutlet weak var viewForm: UIView!
@@ -17,38 +18,96 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtfEmail: UITextField!
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var txtfPassword: UITextField!
-    @IBOutlet weak var btnLogin: PressableStylized!
-    @IBOutlet weak var consButtonCenter: NSLayoutConstraint!
-    @IBOutlet weak var consButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var btnSignIn: PressableStylized!
+    @IBOutlet weak var btnSignUp: PressableStylized!
+    
+    
+    // Constrains
+    @IBOutlet weak var consLblLogoTop: NSLayoutConstraint!
+    @IBOutlet weak var consBtnSignInCenter: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animateLogo()
-        setupLanguage()
+        prepareAnimations()
+        localizeViews()
     }
     
-    func setupLanguage() {
-//        lblEmail.text = "email".localize()
-//        lblPassword.text = "password".localize()
-        btnLogin.setTitle("login".localize(), for: .normal)
-    }
-    
-    func animateLogo() {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-        lblLogo.alpha = 0.0
-        UIView.animate(withDuration: 1.0) {
-            self.lblLogo.alpha = 1.0
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        viewForm.topAnchor.constraint(equalTo: lblLogo.bottomAnchor, constant: 20.0).isActive = true
+//        let consOtra = NSLayoutConstraint(item: btnLogin, attribute: .bottom, relatedBy: .equal, toItem: viewForm, attribute: .top, multiplier: 1.0, constant: 30.0)
+//        view.addConstraint(consOtra)
+//        view.addConstraints([consOtra])
+        
+        if !animationStarted {
+            animationStarted = true
+            startLogoAnimation()
         }
         
-//        UIView.animate(withDuration: <#T##TimeInterval#>, delay: <#T##TimeInterval#>, options: <#T##UIView.AnimationOptions#>, animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
-//
+    }
+    
+}
 
-        UIView.animate(withDuration: 4.0, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .allowUserInteraction, animations: {
-            self.consButtonWidth.constant = 180.0
+// Traducciones
+extension LoginViewController {
+    
+    func localizeViews() {
+        lblEmail.text = "email".localize()
+        lblPassword.text = "password".localize()
+        btnSignIn.setTitle("signin".localize(), for: .normal)
+        btnSignUp.setTitle("signup".localize(), for: .normal)
+    }
+
+}
+
+// Animaciones
+extension LoginViewController  {
+    
+    func prepareAnimations() {
+        viewForm.alpha = 0.0
+        consLblLogoTop.constant = -(lblLogo.frame.height + view.safeAreaInsets.bottom)
+        consBtnSignInCenter.constant = -(view.frame.width + btnSignIn.frame.width) / 2 - 10.0
+    }
+    
+    func startLogoAnimation() {
+        consLblLogoTop.constant = 20
+        
+        UIView.animate(withDuration: 2.0,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.3,
+                       options: [],
+                       animations: {
+                        self.view.layoutIfNeeded()
         }) { (finished) in
-            self.consButtonWidth.constant = 120.0
+            self.startViewFormAnimation()
+            self.startBtnLoginAnimation()
         }
-        
     }
-
+    
+    func startViewFormAnimation() {
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0,
+                       options: [],
+                       animations: {
+                        self.viewForm.alpha = 1.0
+        }) { (finished) in
+            
+        }
+    }
+    
+    func startBtnLoginAnimation() {
+        consBtnSignInCenter.constant = 0
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0,
+                       options: [.curveEaseOut],
+                       animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { (finished) in
+            
+        })
+    }
+    
 }

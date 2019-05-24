@@ -56,8 +56,6 @@
 		D968D77122971E28002C1D10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D968D77222972107002C1D10 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		D968D77C2297240C002C1D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
-		D968D77F22972418002C1D10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Auth.strings; sourceTree = "<group>"; };
-		D968D7812297241B002C1D10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Auth.strings; sourceTree = "<group>"; };
 		D9DB109F2294426C008FFB0F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		D9F8B20E2296FA940054FC3F /* UIViewStylized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStylized.swift; sourceTree = "<group>"; };
@@ -350,8 +348,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				D968D77C2297240C002C1D10 /* Base */,
-				D968D77F22972418002C1D10 /* en */,
-				D968D7812297241B002C1D10 /* es */,
 			);
 			name = Auth.storyboard;
 			sourceTree = "<group>";

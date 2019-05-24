@@ -6,6 +6,7 @@
   Copyright © 2019 Dev2. All rights reserved.
 */
 
-"login" = "Entrar";
 "email" = "correo electrónico";
 "password" = "contraseña";
+"signin" = "Entrar";
+"signup" = "Registrarse";

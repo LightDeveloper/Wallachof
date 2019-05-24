@@ -13,10 +13,7 @@ class PressableStylized: PressableButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         colors = ColorSet(button: .buttonForeground, shadow: .buttonBorder)
-        
-        tintColor = .black
     }
 
 }
