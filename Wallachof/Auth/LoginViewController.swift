@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var animationStarted = false
+    var animator: UIDynamicAnimator!
     
     @IBOutlet weak var lblLogo: UILabel!
     @IBOutlet weak var viewForm: UIView!
@@ -20,11 +21,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtfPassword: UITextField!
     @IBOutlet weak var btnSignIn: PressableStylized!
     @IBOutlet weak var btnSignUp: PressableStylized!
-    
+    @IBOutlet weak var btnAbout: UIButton!
+    @IBOutlet weak var viewFloor: UIView!
+    @IBOutlet weak var activityLoading: UIActivityIndicatorView!
     
     // Constrains
     @IBOutlet weak var consLblLogoTop: NSLayoutConstraint!
     @IBOutlet weak var consBtnSignInCenter: NSLayoutConstraint!
+    @IBOutlet weak var consBtnSignUpCenter: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +62,7 @@ extension LoginViewController {
         lblPassword.text = "password".localize()
         btnSignIn.setTitle("signin".localize(), for: .normal)
         btnSignUp.setTitle("signup".localize(), for: .normal)
+        btnAbout.setTitle("about".localize(), for: .normal)
     }
 
 }
@@ -67,8 +72,11 @@ extension LoginViewController  {
     
     func prepareAnimations() {
         viewForm.alpha = 0.0
+        btnAbout.isHidden = true
+        
         consLblLogoTop.constant = -(lblLogo.frame.height + view.safeAreaInsets.bottom)
-        consBtnSignInCenter.constant = -(view.frame.width + btnSignIn.frame.width) / 2 - 10.0
+        consBtnSignInCenter.constant = -(view.frame.width + btnSignIn.frame.width) / 2 - 20.0
+        consBtnSignUpCenter.constant =  (view.frame.width + btnSignUp.frame.width) / 2 + 20.0
     }
     
     func startLogoAnimation() {
@@ -83,7 +91,9 @@ extension LoginViewController  {
                         self.view.layoutIfNeeded()
         }) { (finished) in
             self.startViewFormAnimation()
-            self.startBtnLoginAnimation()
+            self.startBtnSignInAnimation()
+            self.startBtnSignUpAnimation()
+            self.startBtnAboutAnimation()
         }
     }
     
@@ -94,11 +104,23 @@ extension LoginViewController  {
                        animations: {
                         self.viewForm.alpha = 1.0
         }) { (finished) in
+            self.startViewFormBeating()
             
         }
     }
     
-    func startBtnLoginAnimation() {
+    func startViewFormBeating() {
+        UIView.animate(withDuration: 0.9,
+                       delay: 0.0,
+                       options: [.autoreverse, .repeat, .curveEaseInOut, .allowUserInteraction],
+                       animations: {
+                        self.viewForm.layer.transform =  CATransform3DMakeRotation(CGFloat(Double.pi / 5), 1.0, 0.0, 0.0)
+//                        self.viewForm.layer.transform =  CATransform3DMakeScale(1.05, 1.05,  1.0)
+        }, completion: nil)
+        
+    }
+    
+    func startBtnSignInAnimation() {
         consBtnSignInCenter.constant = 0
         UIView.animate(withDuration: 1.0,
                        delay: 0.0,
@@ -108,6 +130,57 @@ extension LoginViewController  {
         }, completion: { (finished) in
             
         })
+    }
+    
+    func startBtnSignUpAnimation() {
+        consBtnSignUpCenter.constant = 0
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0,
+                       options: [.curveEaseOut],
+                       animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { (finished) in
+            
+        })
+    }
+    
+    
+    func startBtnAboutAnimation() {
+        btnAbout.isHidden = false
+        btnAbout.frame.origin.y = -btnAbout.frame.height*0.5
+
+        animator = UIDynamicAnimator(referenceView: view)
+        animator.delegate = self
+        
+        let gravity = UIGravityBehavior(items: [btnAbout])
+        animator.addBehavior(gravity)
+        
+        let collision = UICollisionBehavior(items: [btnAbout])
+        collision.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(collision)
+        
+        
+//        let from = CGPoint(x: 0, y: btnSignUp.frame.maxY + btnAbout.frame.height + 40.0)
+//        let to = CGPoint(x: view.frame.width, y: btnSignUp.frame.maxY + btnAbout.frame.height + 85.0)
+//
+//        let boundaryId = NSString(string: "floor")
+//        collision.addBoundary(withIdentifier: boundaryId, from: from, to: to)
+        
+        let boundaryId = NSString(string: "floor")
+        collision.addBoundary(withIdentifier: boundaryId, for: UIBezierPath(rect: viewFloor.frame))
+        
+        let btnBehaviour = UIDynamicItemBehavior(items: [btnAbout])
+        btnBehaviour.allowsRotation = true
+        btnBehaviour.elasticity = 0.2
+        animator.addBehavior(btnBehaviour)
+    }
+}
+
+extension LoginViewController: UIDynamicAnimatorDelegate {
+    
+    func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
+        debugPrint("He terminado de animar")
+        activityLoading.stopAnimating()
     }
     
 }

@@ -90,39 +90,54 @@
                                 <state key="normal" title="login">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwo-fA-I7V" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
-                                <rect key="frame" x="127" y="390.5" width="66" height="38"/>
+                                <rect key="frame" x="127" y="373" width="66" height="38"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="signup">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t08-G8-6DM">
+                                <rect key="frame" x="0.0" y="469" width="320" height="10"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="1fM-vm-o9I"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="MoC-bN-gae">
+                                <rect key="frame" x="269" y="53" width="20" height="20"/>
+                                <color key="color" red="1" green="0.4941176471" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvN-Vs-ISZ" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
+                                <rect key="frame" x="130" y="431" width="60" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="about">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66185873045910348" green="0.97680455450000003" blue="0.67187399681855475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="MoC-bN-gae" firstAttribute="top" secondItem="tdc-CY-bfc" secondAttribute="top" constant="33" id="1Pd-1N-PZL"/>
                             <constraint firstItem="nDw-j9-BWb" firstAttribute="centerX" secondItem="tdc-CY-bfc" secondAttribute="centerX" id="Bjg-hb-460"/>
+                            <constraint firstItem="t08-G8-6DM" firstAttribute="leading" secondItem="tdc-CY-bfc" secondAttribute="leading" id="CMj-Im-7hV"/>
+                            <constraint firstItem="NvN-Vs-ISZ" firstAttribute="centerX" secondItem="88u-um-4CM" secondAttribute="centerX" id="G6g-1J-pYa"/>
                             <constraint firstItem="hQ5-47-4QK" firstAttribute="centerX" secondItem="nDw-j9-BWb" secondAttribute="centerX" id="IzE-jn-ax6"/>
+                            <constraint firstItem="t08-G8-6DM" firstAttribute="trailing" secondItem="tdc-CY-bfc" secondAttribute="trailing" id="JHC-CY-CvQ"/>
+                            <constraint firstItem="t08-G8-6DM" firstAttribute="top" secondItem="NvN-Vs-ISZ" secondAttribute="bottom" id="LhI-QU-iUf"/>
+                            <constraint firstItem="t08-G8-6DM" firstAttribute="top" secondItem="Jwo-fA-I7V" secondAttribute="bottom" constant="58" id="Mo6-QJ-F6x"/>
                             <constraint firstItem="Jwo-fA-I7V" firstAttribute="centerX" secondItem="hQ5-47-4QK" secondAttribute="centerX" id="OUM-uX-Qa6"/>
                             <constraint firstItem="nDw-j9-BWb" firstAttribute="top" secondItem="tdc-CY-bfc" secondAttribute="top" constant="20" id="Q1a-DP-hjO"/>
+                            <constraint firstItem="tdc-CY-bfc" firstAttribute="trailing" secondItem="MoC-bN-gae" secondAttribute="trailing" constant="31" id="abb-PI-Gdb"/>
                             <constraint firstItem="Eg5-XD-Uc3" firstAttribute="top" secondItem="hQ5-47-4QK" secondAttribute="bottom" constant="40" id="asl-yR-rsr"/>
-                            <constraint firstItem="Jwo-fA-I7V" firstAttribute="top" secondItem="Eg5-XD-Uc3" secondAttribute="bottom" constant="37.5" id="geB-br-Uyv"/>
+                            <constraint firstItem="Jwo-fA-I7V" firstAttribute="top" secondItem="Eg5-XD-Uc3" secondAttribute="bottom" constant="20" id="geB-br-Uyv"/>
                             <constraint firstItem="Eg5-XD-Uc3" firstAttribute="centerX" secondItem="hQ5-47-4QK" secondAttribute="centerX" id="nrE-HN-tu7"/>
                             <constraint firstItem="hQ5-47-4QK" firstAttribute="top" secondItem="nDw-j9-BWb" secondAttribute="bottom" constant="23" id="v5j-dj-fK2"/>
                         </constraints>
@@ -135,15 +150,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="nsu-Dn-oWj"/>
                     <connections>
+                        <outlet property="activityLoading" destination="MoC-bN-gae" id="xao-fo-4DP"/>
+                        <outlet property="btnAbout" destination="NvN-Vs-ISZ" id="t98-Vr-xhc"/>
                         <outlet property="btnSignIn" destination="Eg5-XD-Uc3" id="wUL-hu-gDp"/>
                         <outlet property="btnSignUp" destination="Jwo-fA-I7V" id="4xc-Hz-6O1"/>
                         <outlet property="consBtnSignInCenter" destination="nrE-HN-tu7" id="QJX-sM-Apg"/>
+                        <outlet property="consBtnSignUpCenter" destination="OUM-uX-Qa6" id="kiP-lM-c6r"/>
                         <outlet property="consLblLogoTop" destination="Q1a-DP-hjO" id="b33-RH-iCl"/>
                         <outlet property="lblEmail" destination="TN7-32-jhP" id="FfH-9L-feH"/>
                         <outlet property="lblLogo" destination="nDw-j9-BWb" id="HK8-AB-eDi"/>
                         <outlet property="lblPassword" destination="dds-eG-H8w" id="EJv-qB-wPI"/>
                         <outlet property="txtfEmail" destination="qtt-9w-JIF" id="jlj-kE-jcL"/>
                         <outlet property="txtfPassword" destination="S7K-AQ-354" id="ctJ-gx-yHh"/>
+                        <outlet property="viewFloor" destination="t08-G8-6DM" id="Bjc-DB-QU7"/>
                         <outlet property="viewForm" destination="hQ5-47-4QK" id="NsD-oC-3Ct"/>
                     </connections>
                 </viewController>

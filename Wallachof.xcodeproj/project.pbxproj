@@ -14,6 +14,7 @@
 		D90FB85A2292F2950000C029 /* Wallachof.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8582292F2950000C029 /* Wallachof.xcdatamodeld */; };
 		D90FB85C2292F29F0000C029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90FB85B2292F29F0000C029 /* Assets.xcassets */; };
 		D90FB85F2292F29F0000C029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90FB85D2292F29F0000C029 /* LaunchScreen.storyboard */; };
+		D91BCEA62298731300B6F34D /* AuthWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BCEA52298731300B6F34D /* AuthWebservice.swift */; };
 		D91D6A4E2293088300947268 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D6A4A229307B300947268 /* Product+CoreDataClass.swift */; };
 		D91D6A4F2293088A00947268 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D6A4B229307B300947268 /* Product+CoreDataProperties.swift */; };
 		D942EC7E2295A07A000E7FF8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942EC7D2295A07A000E7FF8 /* MapViewController.swift */; };
@@ -44,6 +45,7 @@
 		D90FB85B2292F29F0000C029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90FB85E2292F29F0000C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90FB8602292F29F0000C029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D91BCEA52298731300B6F34D /* AuthWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWebservice.swift; sourceTree = "<group>"; };
 		D91D6A4A229307B300947268 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D91D6A4B229307B300947268 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D942EC7D2295A07A000E7FF8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				D9F8B2112296FD740054FC3F /* LoginViewController.swift */,
 				D968D77222972107002C1D10 /* String+Localized.swift */,
+				D91BCEA52298731300B6F34D /* AuthWebservice.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91BCEA62298731300B6F34D /* AuthWebservice.swift in Sources */,
 				D9F8B2122296FD740054FC3F /* LoginViewController.swift in Sources */,
 				D9F8F79F229329BC007B8FAE /* CoreDataManager.swift in Sources */,
 				D9DB10A02294426C008FFB0F /* AddProductViewController.swift in Sources */,
