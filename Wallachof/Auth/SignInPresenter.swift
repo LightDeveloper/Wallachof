@@ -37,7 +37,19 @@ class SignInPresenterImpl: SignInPresenter {
         view.startLoginAnimation()
         
         let authService: AuthService = AuthServiceImpl()
-        authService.login(email: email, password: password)
+        
+        authService.login(email: email, password: password) { (result, error) in
+            
+            if error != nil {
+//                view.showCommsError()
+                return
+            }
+            
+            if let result = result {
+                debugPrint("Resultado es \(result)")
+            }
+            
+        }
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (_) in
             self.view.stopLoginAnimation()
