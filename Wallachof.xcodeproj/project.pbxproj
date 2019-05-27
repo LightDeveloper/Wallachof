@@ -11,8 +11,12 @@
 		D9073C72229C29A900C57E2E /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C71229C29A900C57E2E /* SignInPresenter.swift */; };
 		D9073C75229C309200C57E2E /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C74229C309200C57E2E /* String+Validations.swift */; };
 		D9073C77229C32D900C57E2E /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C76229C32D900C57E2E /* UIView+Animations.swift */; };
-		D9073C7A229C3E8200C57E2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C79229C3E8200C57E2E /* AuthService.swift */; };
+		D9073C7A229C3E8200C57E2E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C79229C3E8200C57E2E /* APIClient.swift */; };
 		D9073C7C229C567B00C57E2E /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C7B229C567B00C57E2E /* RequestResult.swift */; };
+		D9073C7E229C5C6F00C57E2E /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C7D229C5C6F00C57E2E /* Resource.swift */; };
+		D9073C80229C61F800C57E2E /* SignInResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C7F229C61F800C57E2E /* SignInResource.swift */; };
+		D9073C84229C66CD00C57E2E /* WallachofServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C83229C66CD00C57E2E /* WallachofServices.swift */; };
+		D9073C86229C68F500C57E2E /* UserWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C85229C68F500C57E2E /* UserWS.swift */; };
 		D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8512292F2950000C029 /* AppDelegate.swift */; };
 		D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */; };
 		D90FB8572292F2950000C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90FB8552292F2950000C029 /* Main.storyboard */; };
@@ -45,8 +49,12 @@
 		D9073C71229C29A900C57E2E /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		D9073C74229C309200C57E2E /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
 		D9073C76229C32D900C57E2E /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
-		D9073C79229C3E8200C57E2E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D9073C79229C3E8200C57E2E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D9073C7B229C567B00C57E2E /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		D9073C7D229C5C6F00C57E2E /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		D9073C7F229C61F800C57E2E /* SignInResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResource.swift; sourceTree = "<group>"; };
+		D9073C83229C66CD00C57E2E /* WallachofServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallachofServices.swift; sourceTree = "<group>"; };
+		D9073C85229C68F500C57E2E /* UserWS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWS.swift; sourceTree = "<group>"; };
 		D90FB84E2292F2950000C029 /* Wallachof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallachof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90FB8512292F2950000C029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTesterViewController.swift; sourceTree = "<group>"; };
@@ -108,10 +116,30 @@
 		D9073C78229C3E6B00C57E2E /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
-				D9073C79229C3E8200C57E2E /* AuthService.swift */,
-				D9073C7B229C567B00C57E2E /* RequestResult.swift */,
+				D9073C81229C66A000C57E2E /* Core */,
+				D9073C82229C66B400C57E2E /* Wallachof */,
 			);
 			path = WebServices;
+			sourceTree = "<group>";
+		};
+		D9073C81229C66A000C57E2E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D9073C79229C3E8200C57E2E /* APIClient.swift */,
+				D9073C7D229C5C6F00C57E2E /* Resource.swift */,
+				D9073C7B229C567B00C57E2E /* RequestResult.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D9073C82229C66B400C57E2E /* Wallachof */ = {
+			isa = PBXGroup;
+			children = (
+				D9073C83229C66CD00C57E2E /* WallachofServices.swift */,
+				D9073C7F229C61F800C57E2E /* SignInResource.swift */,
+				D9073C85229C68F500C57E2E /* UserWS.swift */,
+			);
+			path = Wallachof;
 			sourceTree = "<group>";
 		};
 		D90FB8452292F2940000C029 = {
@@ -335,16 +363,20 @@
 				D9073C77229C32D900C57E2E /* UIView+Animations.swift in Sources */,
 				D91BCEA62298731300B6F34D /* AuthWebservice.swift in Sources */,
 				D9F8B2122296FD740054FC3F /* SignInViewController.swift in Sources */,
+				D9073C7E229C5C6F00C57E2E /* Resource.swift in Sources */,
 				D9F8F79F229329BC007B8FAE /* CoreDataManager.swift in Sources */,
 				D9DB10A02294426C008FFB0F /* AddProductViewController.swift in Sources */,
 				D91D6A4F2293088A00947268 /* Product+CoreDataProperties.swift in Sources */,
 				D9F8B20F2296FA940054FC3F /* UIViewStylized.swift in Sources */,
-				D9073C7A229C3E8200C57E2E /* AuthService.swift in Sources */,
+				D9073C7A229C3E8200C57E2E /* APIClient.swift in Sources */,
 				D968D76B229712D0002C1D10 /* UIColor+Styles.swift in Sources */,
 				D9073C7C229C567B00C57E2E /* RequestResult.swift in Sources */,
+				D9073C86229C68F500C57E2E /* UserWS.swift in Sources */,
 				D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */,
+				D9073C80229C61F800C57E2E /* SignInResource.swift in Sources */,
 				D9073C72229C29A900C57E2E /* SignInPresenter.swift in Sources */,
 				D942EC7E2295A07A000E7FF8 /* MapViewController.swift in Sources */,
+				D9073C84229C66CD00C57E2E /* WallachofServices.swift in Sources */,
 				D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */,
 				D968D77322972107002C1D10 /* String+Localized.swift in Sources */,
 				D9DB10A322945D65008FFB0F /* UIImage+Resize.swift in Sources */,

@@ -54,6 +54,8 @@ class SignInViewController: UIViewController {
         txtfEmail.text = "david@gmail.com"
         txtfPassword.text = "1234"
         #endif
+        
+        UserWS.test()
                 
         prepareAnimations()
         localizeViews()

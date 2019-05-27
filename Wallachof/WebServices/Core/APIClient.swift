@@ -8,22 +8,19 @@
 
 import Foundation
 
-protocol AuthService {
-    func login(email: String, password: String,
-               completion: @escaping (String?, Error?) -> () )
+class APIClient {
+    
+    let baseURL: URL
 
-}
-
-class AuthServiceImpl: AuthService {
-
-    let url = URL(string: "https://private-5980ce-wallachof.apiary-mock.com/user-fail")!
-
-    func login(email: String, password: String,
+    init(baseURL: URL) {
+        self.baseURL = baseURL
+    }
+    
+    func performRequest(resource: Resource,
                completion: @escaping (String?, Error?) -> () ) {
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
+        let request = resource.requestWithBaseURL(baseURL: baseURL)
+                
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             debugPrint("Tengo respuesta de la petición")

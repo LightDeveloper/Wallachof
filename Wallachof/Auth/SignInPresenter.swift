@@ -36,9 +36,9 @@ class SignInPresenterImpl: SignInPresenter {
         
         view.startLoginAnimation()
         
-        let authService: AuthService = AuthServiceImpl()
+        let wallachofClient: WallachofClient = WallachofClientImpl()
         
-        authService.login(email: email, password: password) { (result, error) in
+        wallachofClient.login(email: email, password: password) { (result, error) in
             
             if error != nil {
 //                view.showCommsError()
