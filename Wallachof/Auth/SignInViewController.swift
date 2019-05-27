@@ -8,13 +8,26 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+protocol SignInView: class {
+    
+    func showInvalidEmail()
+    func showInvalidPassword()
+    func startLoginAnimation()
+    func stopLoginAnimation()
+    
+}
+
+class SignInViewController: UIViewController {
+    
+    var presenter: SignInPresenter!
     
     var animationStarted = false
     var animator: UIDynamicAnimator!
     
     @IBOutlet weak var lblLogo: UILabel!
     @IBOutlet weak var viewForm: UIView!
+    @IBOutlet weak var stackForm: UIStackView!
+    @IBOutlet weak var activityLoading: UIActivityIndicatorView!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var txtfEmail: UITextField!
     @IBOutlet weak var lblPassword: UILabel!
@@ -23,7 +36,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnSignUp: PressableStylized!
     @IBOutlet weak var btnAbout: UIButton!
     @IBOutlet weak var viewFloor: UIView!
-    @IBOutlet weak var activityLoading: UIActivityIndicatorView!
     
     // Constrains
     @IBOutlet weak var consLblLogoTop: NSLayoutConstraint!
@@ -32,6 +44,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter = SignInPresenterImpl(view: self)
+        
+        txtfEmail.delegate = self
+        txtfPassword.delegate = self
+        
+        #if DEBUG
+        txtfEmail.text = "david@gmail.com"
+        txtfPassword.text = "1234"
+        #endif
+                
         prepareAnimations()
         localizeViews()
     }
@@ -52,10 +75,57 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func btnSignInPressed(_ sender: Any) {
+        executeLogin()
+    }
+    
+    func executeLogin() {
+        view.endEditing(true)
+        presenter.login(email: txtfEmail.text!, password: txtfPassword.text!)
+    }
+    
 }
 
+extension SignInViewController: SignInView {
+    
+    func showInvalidEmail() {
+        txtfEmail.shake()
+        txtfEmail.becomeFirstResponder()
+    }
+    
+    func showInvalidPassword() {
+        txtfPassword.shake()
+        txtfPassword.becomeFirstResponder()
+    }
+    
+    func startLoginAnimation() {
+        startLoginAnimations()
+    }
+    
+    func stopLoginAnimation() {
+        stopLoginAnimations()
+    }
+    
+}
+
+// Control de textfields
+extension SignInViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == txtfEmail {
+            txtfPassword.becomeFirstResponder()
+        } else if textField == txtfPassword {
+            executeLogin()
+        }
+        
+        return true
+    }
+    
+}
+
+
 // Traducciones
-extension LoginViewController {
+extension SignInViewController {
     
     func localizeViews() {
         lblEmail.text = "email".localize()
@@ -68,7 +138,7 @@ extension LoginViewController {
 }
 
 // Animaciones
-extension LoginViewController  {
+extension SignInViewController  {
     
     func prepareAnimations() {
         viewForm.alpha = 0.0
@@ -103,23 +173,43 @@ extension LoginViewController  {
                        options: [],
                        animations: {
                         self.viewForm.alpha = 1.0
-        }) { (finished) in
-            self.startViewFormBeating()
-            
-        }
+        })
     }
     
-    func startViewFormBeating() {
-        UIView.animate(withDuration: 0.9,
+    func startLoginAnimations() {
+        UIView.animate(withDuration: 1.0,
                        delay: 0.0,
-                       options: [.autoreverse, .repeat, .curveEaseInOut, .allowUserInteraction],
+                       options: [.curveEaseInOut],
                        animations: {
-                        self.viewForm.layer.transform =  CATransform3DMakeRotation(CGFloat(Double.pi / 5), 1.0, 0.0, 0.0)
-//                        self.viewForm.layer.transform =  CATransform3DMakeScale(1.05, 1.05,  1.0)
-        }, completion: nil)
-        
+                        self.btnSignIn.alpha = 0
+                        self.btnSignUp.alpha = 0
+                        self.btnAbout.alpha = 0
+                        self.stackForm.alpha = 0
+                        
+                        self.activityLoading.alpha = 1
+                        self.activityLoading.startAnimating()
+                        
+                        self.viewForm.layer.transform =  CATransform3DMakeRotation(CGFloat(Double.pi), 0.0, 1.0, 0.0)
+        })
     }
-    
+
+    func stopLoginAnimations() {
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0,
+                       options: [.curveEaseInOut],
+                       animations: {
+                        self.btnSignIn.alpha = 1
+                        self.btnSignUp.alpha = 1
+                        self.btnAbout.alpha = 1
+                        self.stackForm.alpha = 1
+                        
+                        self.activityLoading.alpha = 0
+                        self.activityLoading.stopAnimating()
+                        
+                        self.viewForm.layer.transform =  CATransform3DMakeRotation(0, 0.0, 1.0, 0.0)
+        })
+    }
+
     func startBtnSignInAnimation() {
         consBtnSignInCenter.constant = 0
         UIView.animate(withDuration: 1.0,
@@ -176,11 +266,10 @@ extension LoginViewController  {
     }
 }
 
-extension LoginViewController: UIDynamicAnimatorDelegate {
+extension SignInViewController: UIDynamicAnimatorDelegate {
     
     func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
         debugPrint("He terminado de animar")
-        activityLoading.stopAnimating()
     }
     
 }

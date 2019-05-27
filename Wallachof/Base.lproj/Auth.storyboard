@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="kLg-Zx-1q5">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="dcz-fA-qnW" customClass="LoginViewController" customModule="Wallachof" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="dcz-fA-qnW" customClass="SignInViewController" customModule="Wallachof" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88u-um-4CM" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +31,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-47-4QK" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
                                 <rect key="frame" x="16" y="110" width="288" height="165"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="MoC-bN-gae">
+                                        <rect key="frame" x="125.5" y="64" width="37" height="37"/>
+                                        <color key="color" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G97-xy-deC">
                                         <rect key="frame" x="20" y="20" width="248" height="125"/>
                                         <subviews>
@@ -44,7 +48,7 @@
                                                 <rect key="frame" x="0.0" y="30" width="248" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dds-eG-H8w">
                                                 <rect key="frame" x="0.0" y="65" width="248" height="25"/>
@@ -56,7 +60,7 @@
                                                 <rect key="frame" x="0.0" y="95" width="248" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -75,8 +79,10 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="7Bk-cW-nd2"/>
                                     <constraint firstItem="G97-xy-deC" firstAttribute="leading" secondItem="hQ5-47-4QK" secondAttribute="leading" constant="20" id="SDi-a5-F3y"/>
+                                    <constraint firstItem="MoC-bN-gae" firstAttribute="centerY" secondItem="hQ5-47-4QK" secondAttribute="centerY" id="XQ7-lO-rQ1"/>
                                     <constraint firstAttribute="trailing" secondItem="G97-xy-deC" secondAttribute="trailing" constant="20" id="Xcd-IY-ZnO"/>
                                     <constraint firstItem="G97-xy-deC" firstAttribute="top" secondItem="hQ5-47-4QK" secondAttribute="top" constant="20" id="dNl-wV-XLS"/>
+                                    <constraint firstItem="MoC-bN-gae" firstAttribute="centerX" secondItem="hQ5-47-4QK" secondAttribute="centerX" id="fU4-ql-srz"/>
                                     <constraint firstAttribute="bottom" secondItem="G97-xy-deC" secondAttribute="bottom" constant="20" id="upS-ge-o4I"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -90,6 +96,9 @@
                                 <state key="normal" title="login">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSignInPressed:" destination="dcz-fA-qnW" eventType="touchUpInside" id="8xp-eL-mLt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwo-fA-I7V" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
                                 <rect key="frame" x="127" y="373" width="66" height="38"/>
@@ -110,10 +119,6 @@
                                     <constraint firstAttribute="height" constant="10" id="1fM-vm-o9I"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="MoC-bN-gae">
-                                <rect key="frame" x="269" y="53" width="20" height="20"/>
-                                <color key="color" red="1" green="0.4941176471" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvN-Vs-ISZ" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
                                 <rect key="frame" x="130" y="431" width="60" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,7 +130,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.66185873045910348" green="0.97680455450000003" blue="0.67187399681855475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MoC-bN-gae" firstAttribute="top" secondItem="tdc-CY-bfc" secondAttribute="top" constant="33" id="1Pd-1N-PZL"/>
                             <constraint firstItem="nDw-j9-BWb" firstAttribute="centerX" secondItem="tdc-CY-bfc" secondAttribute="centerX" id="Bjg-hb-460"/>
                             <constraint firstItem="t08-G8-6DM" firstAttribute="leading" secondItem="tdc-CY-bfc" secondAttribute="leading" id="CMj-Im-7hV"/>
                             <constraint firstItem="NvN-Vs-ISZ" firstAttribute="centerX" secondItem="88u-um-4CM" secondAttribute="centerX" id="G6g-1J-pYa"/>
@@ -135,7 +139,6 @@
                             <constraint firstItem="t08-G8-6DM" firstAttribute="top" secondItem="Jwo-fA-I7V" secondAttribute="bottom" constant="58" id="Mo6-QJ-F6x"/>
                             <constraint firstItem="Jwo-fA-I7V" firstAttribute="centerX" secondItem="hQ5-47-4QK" secondAttribute="centerX" id="OUM-uX-Qa6"/>
                             <constraint firstItem="nDw-j9-BWb" firstAttribute="top" secondItem="tdc-CY-bfc" secondAttribute="top" constant="20" id="Q1a-DP-hjO"/>
-                            <constraint firstItem="tdc-CY-bfc" firstAttribute="trailing" secondItem="MoC-bN-gae" secondAttribute="trailing" constant="31" id="abb-PI-Gdb"/>
                             <constraint firstItem="Eg5-XD-Uc3" firstAttribute="top" secondItem="hQ5-47-4QK" secondAttribute="bottom" constant="40" id="asl-yR-rsr"/>
                             <constraint firstItem="Jwo-fA-I7V" firstAttribute="top" secondItem="Eg5-XD-Uc3" secondAttribute="bottom" constant="20" id="geB-br-Uyv"/>
                             <constraint firstItem="Eg5-XD-Uc3" firstAttribute="centerX" secondItem="hQ5-47-4QK" secondAttribute="centerX" id="nrE-HN-tu7"/>
@@ -160,6 +163,7 @@
                         <outlet property="lblEmail" destination="TN7-32-jhP" id="FfH-9L-feH"/>
                         <outlet property="lblLogo" destination="nDw-j9-BWb" id="HK8-AB-eDi"/>
                         <outlet property="lblPassword" destination="dds-eG-H8w" id="EJv-qB-wPI"/>
+                        <outlet property="stackForm" destination="G97-xy-deC" id="Tl6-HS-OEc"/>
                         <outlet property="txtfEmail" destination="qtt-9w-JIF" id="jlj-kE-jcL"/>
                         <outlet property="txtfPassword" destination="S7K-AQ-354" id="ctJ-gx-yHh"/>
                         <outlet property="viewFloor" destination="t08-G8-6DM" id="Bjc-DB-QU7"/>

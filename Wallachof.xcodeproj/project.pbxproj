@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		390206220D47C7F79EEBF288 /* Pods_Wallachof.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FE9633A6499B404BB55D3A /* Pods_Wallachof.framework */; };
+		D9073C72229C29A900C57E2E /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C71229C29A900C57E2E /* SignInPresenter.swift */; };
+		D9073C75229C309200C57E2E /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C74229C309200C57E2E /* String+Validations.swift */; };
+		D9073C77229C32D900C57E2E /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C76229C32D900C57E2E /* UIView+Animations.swift */; };
+		D9073C7A229C3E8200C57E2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9073C79229C3E8200C57E2E /* AuthService.swift */; };
 		D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8512292F2950000C029 /* AppDelegate.swift */; };
 		D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */; };
 		D90FB8572292F2950000C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90FB8552292F2950000C029 /* Main.storyboard */; };
@@ -29,7 +33,7 @@
 		D9DB10A02294426C008FFB0F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB109F2294426C008FFB0F /* AddProductViewController.swift */; };
 		D9DB10A322945D65008FFB0F /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */; };
 		D9F8B20F2296FA940054FC3F /* UIViewStylized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8B20E2296FA940054FC3F /* UIViewStylized.swift */; };
-		D9F8B2122296FD740054FC3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8B2112296FD740054FC3F /* LoginViewController.swift */; };
+		D9F8B2122296FD740054FC3F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8B2112296FD740054FC3F /* SignInViewController.swift */; };
 		D9F8F79F229329BC007B8FAE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8F79E229329BC007B8FAE /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		81FE9633A6499B404BB55D3A /* Pods_Wallachof.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallachof.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5B54DF8B0BC69F758A0992 /* Pods-Wallachof.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallachof.release.xcconfig"; path = "Target Support Files/Pods-Wallachof/Pods-Wallachof.release.xcconfig"; sourceTree = "<group>"; };
 		D11383B5CC04443D89C75BA9 /* Pods-Wallachof.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallachof.debug.xcconfig"; path = "Target Support Files/Pods-Wallachof/Pods-Wallachof.debug.xcconfig"; sourceTree = "<group>"; };
+		D9073C71229C29A900C57E2E /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		D9073C74229C309200C57E2E /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
+		D9073C76229C32D900C57E2E /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		D9073C79229C3E8200C57E2E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D90FB84E2292F2950000C029 /* Wallachof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallachof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90FB8512292F2950000C029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90FB8532292F2950000C029 /* CoreDataTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTesterViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +69,7 @@
 		D9DB109F2294426C008FFB0F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		D9F8B20E2296FA940054FC3F /* UIViewStylized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStylized.swift; sourceTree = "<group>"; };
-		D9F8B2112296FD740054FC3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D9F8B2112296FD740054FC3F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D9F8F79E229329BC007B8FAE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +95,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D9073C73229C308300C57E2E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D9073C74229C309200C57E2E /* String+Validations.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D9073C78229C3E6B00C57E2E /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				D9073C79229C3E8200C57E2E /* AuthService.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
 		D90FB8452292F2940000C029 = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +132,10 @@
 		D90FB8502292F2950000C029 /* Wallachof */ = {
 			isa = PBXGroup;
 			children = (
+				D9073C78229C3E6B00C57E2E /* WebServices */,
+				D9073C73229C308300C57E2E /* Helpers */,
+				D9DB10A122945D1D008FFB0F /* ViewHelpers */,
 				D968D76722971006002C1D10 /* Resources */,
-				D9DB10A122945D1D008FFB0F /* Styles */,
 				D91D6A49229307B300947268 /* CoreData */,
 				D9F8B2102296FD570054FC3F /* Auth */,
 				D90FB8512292F2950000C029 /* AppDelegate.swift */,
@@ -155,23 +181,25 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		D9DB10A122945D1D008FFB0F /* Styles */ = {
+		D9DB10A122945D1D008FFB0F /* ViewHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */,
 				D9F8B20E2296FA940054FC3F /* UIViewStylized.swift */,
 				D968D768229710D3002C1D10 /* PressableStylized.swift */,
 				D968D76A229712D0002C1D10 /* UIColor+Styles.swift */,
+				D9073C76229C32D900C57E2E /* UIView+Animations.swift */,
 			);
-			path = Styles;
+			path = ViewHelpers;
 			sourceTree = "<group>";
 		};
 		D9F8B2102296FD570054FC3F /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				D9F8B2112296FD740054FC3F /* LoginViewController.swift */,
+				D9F8B2112296FD740054FC3F /* SignInViewController.swift */,
 				D968D77222972107002C1D10 /* String+Localized.swift */,
 				D91BCEA52298731300B6F34D /* AuthWebservice.swift */,
+				D9073C71229C29A900C57E2E /* SignInPresenter.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -301,14 +329,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9073C77229C32D900C57E2E /* UIView+Animations.swift in Sources */,
 				D91BCEA62298731300B6F34D /* AuthWebservice.swift in Sources */,
-				D9F8B2122296FD740054FC3F /* LoginViewController.swift in Sources */,
+				D9F8B2122296FD740054FC3F /* SignInViewController.swift in Sources */,
 				D9F8F79F229329BC007B8FAE /* CoreDataManager.swift in Sources */,
 				D9DB10A02294426C008FFB0F /* AddProductViewController.swift in Sources */,
 				D91D6A4F2293088A00947268 /* Product+CoreDataProperties.swift in Sources */,
 				D9F8B20F2296FA940054FC3F /* UIViewStylized.swift in Sources */,
+				D9073C7A229C3E8200C57E2E /* AuthService.swift in Sources */,
 				D968D76B229712D0002C1D10 /* UIColor+Styles.swift in Sources */,
 				D90FB8542292F2950000C029 /* CoreDataTesterViewController.swift in Sources */,
+				D9073C72229C29A900C57E2E /* SignInPresenter.swift in Sources */,
 				D942EC7E2295A07A000E7FF8 /* MapViewController.swift in Sources */,
 				D90FB8522292F2950000C029 /* AppDelegate.swift in Sources */,
 				D968D77322972107002C1D10 /* String+Localized.swift in Sources */,
@@ -317,6 +348,7 @@
 				D968D769229710D3002C1D10 /* PressableStylized.swift in Sources */,
 				D90FB85A2292F2950000C029 /* Wallachof.xcdatamodeld in Sources */,
 				D91D6A4E2293088300947268 /* Product+CoreDataClass.swift in Sources */,
+				D9073C75229C309200C57E2E /* String+Validations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
