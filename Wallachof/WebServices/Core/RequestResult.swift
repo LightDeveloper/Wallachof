@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RequestResult {    
-    var body: String?
-    var error: Error?
+enum RequestResult<T: Decodable> {
+    case success(object: T)
+    case error(APIClientError)
 }

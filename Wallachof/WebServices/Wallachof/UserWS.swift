@@ -24,11 +24,6 @@ struct Pet: Codable {
     let numberOfLegs: Double
 }
 
-//extension UIColor: Encodable {
-//
-//
-//}
-
 // Codable: Decodable & Encodable
 extension UserWS: Encodable {
     

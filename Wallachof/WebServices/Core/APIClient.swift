@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias JSONDictionary = [String: AnyObject]
+
 class APIClient {
     
     let baseURL: URL
@@ -16,25 +18,65 @@ class APIClient {
         self.baseURL = baseURL
     }
     
+    func requestObject<T>(resource: Resource, completion: @escaping (RequestResult<T>) -> () ) {
+        
+        performRequest(resource: resource) { (httpResponse, data, error) in
+            
+            if let error = error {
+                let apiError = APIClientError.other(error)
+                completion(RequestResult.error(apiError))
+                return
+            }
+
+            guard let statusCode = httpResponse?.statusCode else {
+                let apiError = APIClientError.couldNotGetStatusCode
+                completion(RequestResult.error(apiError))
+                return
+            }
+
+            var jsonDict: JSONDictionary? = nil
+            if let data = data {
+                jsonDict = (try? JSONSerialization.jsonObject(with: data)) as? JSONDictionary
+                if jsonDict == nil {
+                    let apiError = APIClientError.couldNotDecodeJSON
+                    completion(RequestResult.error(apiError))
+                    return
+                }
+            }
+            
+            if 200..<300 ~= statusCode {
+                if let jsonData = data {
+                    let decoder = JSONDecoder()                    
+                    do {
+                        let objectDecoded = try decoder.decode(T.self, from: jsonData)
+                        completion(RequestResult<T>.success(object: objectDecoded))
+                    } catch {
+                        let apiError = APIClientError.couldNotDecodeJSON
+                        completion(RequestResult.error(apiError))
+                    }
+                }
+                
+            } else {
+                let apiError = APIClientError.badStatus(status: statusCode, jsonError: jsonDict)
+                completion(RequestResult.error(apiError))
+            }
+        }
+        
+    }
+    
     func performRequest(resource: Resource,
-               completion: @escaping (String?, Error?) -> () ) {
+               completion: @escaping (HTTPURLResponse?, Data?, Error?) -> () ) {
         
         let request = resource.requestWithBaseURL(baseURL: baseURL)
                 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
-            debugPrint("Tengo respuesta de la petición")
-
-            if let response = response as? HTTPURLResponse {
-                debugPrint("código es \(response.statusCode)")
-                
-                if let data = data, let body = String(data: data, encoding: .utf8) {
-                    print(body)
-                    completion(body, nil)
-                }
+            if let httpResponse = response as? HTTPURLResponse {
+                debugPrint("código es \(httpResponse.statusCode)")
+                completion(httpResponse, data, nil)
             } else {
                 print(error ?? "Unknown error")
-                completion(nil, error)
+                completion(nil, nil, error)
             }
         }
         

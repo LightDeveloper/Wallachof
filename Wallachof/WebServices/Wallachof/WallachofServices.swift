@@ -9,9 +9,7 @@
 import Foundation
 
 protocol WallachofClient {
-    func login(email: String, password: String,
-               completion: @escaping (String?, Error?) -> () )
-
+    func login(email: String, password: String, completion: @escaping (RequestResult<UserWS>) -> ())
 }
 
 class WallachofClientImpl: APIClient, WallachofClient {
@@ -22,8 +20,17 @@ class WallachofClientImpl: APIClient, WallachofClient {
         super.init(baseURL: wallachofBaseURL)
     }
     
-    func login(email: String, password: String, completion: @escaping (String?, Error?) -> () ) {
+    func login(email: String, password: String, completion: @escaping (RequestResult<UserWS>) -> ()) {
         let signInResource = SignInResource(email: email, password: password)
-        performRequest(resource: signInResource, completion: completion)
+                
+        requestObject(resource: signInResource) { (result: RequestResult<UserWS>) in
+            completion(result)
+        }
+
     }
+    
+//    func login(email: String, password: String, completion: @escaping (Data?, Error?) -> () ) {
+//        let signInResource = SignInResource(email: email, password: password)
+//        performRequest(resource: signInResource, completion: completion)
+//    }
 }

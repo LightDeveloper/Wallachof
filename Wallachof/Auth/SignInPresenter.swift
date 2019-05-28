@@ -37,16 +37,24 @@ class SignInPresenterImpl: SignInPresenter {
         view.startLoginAnimation()
         
         let wallachofClient: WallachofClient = WallachofClientImpl()
-        
-        wallachofClient.login(email: email, password: password) { (result, error) in
+        wallachofClient.login(email: email, password: password) { (result) in
             
-            if error != nil {
-//                view.showCommsError()
-                return
-            }
-            
-            if let result = result {
-                debugPrint("Resultado es \(result)")
+            switch result {
+            case .success(let user):
+                debugPrint("\(user.name) su conejo es \(String(describing: user.pet?.name)) ")
+            case .error(let apiError):
+                switch apiError {
+                case .malformedURL(let url):
+                    debugPrint("Error de producción \(url)")
+                case .couldNotGetStatusCode:
+                    debugPrint("Error de comunicación")
+                case .couldNotDecodeJSON:
+                    debugPrint("Error de datos")
+                case .badStatus(let status, let jsonError):
+                    debugPrint("Error de status \(status): \(String(describing: jsonError))")
+                case .other(let error):
+                    debugPrint(error.localizedDescription)
+                }
             }
             
         }
