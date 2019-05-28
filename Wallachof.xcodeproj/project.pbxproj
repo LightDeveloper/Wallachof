@@ -37,6 +37,9 @@
 		D968D77B2297240C002C1D10 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D968D77D2297240C002C1D10 /* Auth.storyboard */; };
 		D9D955D2229D8E6700953DEC /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D955D1229D8E6700953DEC /* UIColor+HexString.swift */; };
 		D9D955D4229D986300953DEC /* APIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D955D3229D986300953DEC /* APIClientError.swift */; };
+		D9D955D6229DB5F800953DEC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D955D5229DB5F800953DEC /* AboutViewController.swift */; };
+		D9D955D8229DB96100953DEC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D955D7229DB96100953DEC /* WebKit.framework */; };
+		D9D955DA229DBB9800953DEC /* webChof in Resources */ = {isa = PBXBuildFile; fileRef = D9D955D9229DBB9800953DEC /* webChof */; };
 		D9DB10A02294426C008FFB0F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB109F2294426C008FFB0F /* AddProductViewController.swift */; };
 		D9DB10A322945D65008FFB0F /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */; };
 		D9F8B20F2296FA940054FC3F /* UIViewStylized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8B20E2296FA940054FC3F /* UIViewStylized.swift */; };
@@ -80,6 +83,9 @@
 		D968D77C2297240C002C1D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		D9D955D1229D8E6700953DEC /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		D9D955D3229D986300953DEC /* APIClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientError.swift; sourceTree = "<group>"; };
+		D9D955D5229DB5F800953DEC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D9D955D7229DB96100953DEC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D9D955D9229DBB9800953DEC /* webChof */ = {isa = PBXFileReference; lastKnownFileType = folder; path = webChof; sourceTree = "<group>"; };
 		D9DB109F2294426C008FFB0F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		D9DB10A222945D65008FFB0F /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		D9F8B20E2296FA940054FC3F /* UIViewStylized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStylized.swift; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D955D8229DB96100953DEC /* WebKit.framework in Frameworks */,
 				D942EC832295A162000E7FF8 /* MapKit.framework in Frameworks */,
 				390206220D47C7F79EEBF288 /* Pods_Wallachof.framework in Frameworks */,
 			);
@@ -204,6 +211,7 @@
 		D942EC7F2295A120000E7FF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9D955D7229DB96100953DEC /* WebKit.framework */,
 				D942EC822295A162000E7FF8 /* MapKit.framework */,
 				81FE9633A6499B404BB55D3A /* Pods_Wallachof.framework */,
 			);
@@ -213,6 +221,7 @@
 		D968D76722971006002C1D10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9D955D9229DBB9800953DEC /* webChof */,
 				D968D76522970FFA002C1D10 /* Splatch.ttf */,
 			);
 			path = Resources;
@@ -237,6 +246,7 @@
 				D968D77222972107002C1D10 /* String+Localized.swift */,
 				D91BCEA52298731300B6F34D /* AuthWebservice.swift */,
 				D9073C71229C29A900C57E2E /* SignInPresenter.swift */,
+				D9D955D5229DB5F800953DEC /* AboutViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -308,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D955DA229DBB9800953DEC /* webChof in Resources */,
 				D968D77B2297240C002C1D10 /* Auth.storyboard in Resources */,
 				D968D76E22971DA8002C1D10 /* Localizable.strings in Resources */,
 				D968D76622970FFA002C1D10 /* Splatch.ttf in Resources */,
@@ -376,6 +387,7 @@
 				D9D955D4229D986300953DEC /* APIClientError.swift in Sources */,
 				D9F8B20F2296FA940054FC3F /* UIViewStylized.swift in Sources */,
 				D9073C7A229C3E8200C57E2E /* APIClient.swift in Sources */,
+				D9D955D6229DB5F800953DEC /* AboutViewController.swift in Sources */,
 				D968D76B229712D0002C1D10 /* UIColor+Styles.swift in Sources */,
 				D9073C7C229C567B00C57E2E /* RequestResult.swift in Sources */,
 				D9073C86229C68F500C57E2E /* UserWS.swift in Sources */,

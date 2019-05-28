@@ -49,7 +49,7 @@ class SignInPresenterImpl: SignInPresenter {
                 case .couldNotGetStatusCode:
                     debugPrint("Error de comunicación")
                 case .couldNotDecodeJSON:
-                    debugPrint("Error de datos")
+                    debugPrint("Error al convertir a JSON")
                 case .badStatus(let status, let jsonError):
                     debugPrint("Error de status \(status): \(String(describing: jsonError))")
                 case .other(let error):

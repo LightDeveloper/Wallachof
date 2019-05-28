@@ -25,8 +25,8 @@ class WallachofClientImpl: APIClient, WallachofClient {
                 
         requestObject(resource: signInResource) { (result: RequestResult<UserWS>) in
             completion(result)
-        }
-
+        }        
+        
     }
     
 //    func login(email: String, password: String, completion: @escaping (Data?, Error?) -> () ) {
