@@ -57,7 +57,7 @@ class SignInViewController: UIViewController {
         
         UserWS.testEncodable()
         UserWS.testDecodable()
-                
+        
         prepareAnimations()
         localizeViews()
     }

@@ -14,8 +14,8 @@ struct UserWS {
     let name: String
     let lastname: String
     let email: String
+    let color: UIColor
     let pet: Pet?
-//    let color: UIColor
 }
 
 struct Pet: Codable {
@@ -23,6 +23,11 @@ struct Pet: Codable {
     let isMale: Bool
     let numberOfLegs: Double
 }
+
+//extension UIColor: Encodable {
+//
+//
+//}
 
 // Codable: Decodable & Encodable
 extension UserWS: Encodable {
@@ -32,18 +37,25 @@ extension UserWS: Encodable {
         case name
         case lastname = "last_name"
         case email
+        case color
         case pet
     }
     
-//    init(from decoder: Decoder) throws {
-//
-//
-//    }
-    
-    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(lastname, forKey: .lastname)
+        try container.encode(email, forKey: .email)
+        try container.encode(pet, forKey: .pet)
+        
+        let colorString = color.htmlRGBaColor
+        try container.encode(colorString, forKey: .color)
+    }
+
     static func testEncodable() {
         let lucas = Pet(name: "Lucas", isMale: false, numberOfLegs: 3.5)
-        let david = UserWS(id: 30, name: "david", lastname: "jorge", email: "david@gmail.com", pet: lucas)
+        let david = UserWS(id: 30, name: "david", lastname: "jorge", email: "david@gmail.com", color: .red, pet: lucas)
         
         let encoder = JSONEncoder()
 //        encoder.outputFormatting = .prettyPrinted
@@ -60,6 +72,23 @@ extension UserWS: Encodable {
 }
 
 extension UserWS: Decodable {
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.lastname = try container.decode(String.self, forKey: .name)
+        self.email = try container.decode(String.self, forKey: .name)
+        self.pet = try container.decode(Pet.self, forKey: .pet)
+        if let stringColor = try? container.decode(String.self, forKey: .color),
+            let color = UIColor(hexaDecimalString: stringColor) {
+            self.color = color
+        } else {
+            self.color = .clear
+        }
+        
+    }
     
     static func testDecodable() {
         let jsonString = """
@@ -68,6 +97,7 @@ extension UserWS: Decodable {
                 "name": "Andrea",
                 "last_name": "Lasagna",
                 "email": "lasagna@vegana.com",
+                "color": "#00FF0030",
                 "pet": {
                     "name": "Lola",
                     "isMale": false,
@@ -83,8 +113,8 @@ extension UserWS: Decodable {
         } catch let error {
             debugPrint("😤 ha fallao, cagüen to \(error)")
         }
-        
+
     }
-    
+
 }
 
