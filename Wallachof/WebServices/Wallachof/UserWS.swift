@@ -68,7 +68,11 @@ extension UserWS: Decodable {
                 "name": "Andrea",
                 "last_name": "Lasagna",
                 "email": "lasagna@vegana.com",
-                "pet": null
+                "pet": {
+                    "name": "Lola",
+                    "isMale": false,
+                    "numberOfLegs": 4,
+                }
             }
 """
         let jsonData = jsonString.data(using: .utf8)
