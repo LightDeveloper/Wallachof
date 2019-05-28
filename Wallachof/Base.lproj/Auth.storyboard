@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dcz-fA-qnW">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,45 +19,45 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="dcz-fA-qnW" customClass="SignInViewController" customModule="Wallachof" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88u-um-4CM" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WALLACHOF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-j9-BWb">
-                                <rect key="frame" x="70" y="40" width="180.5" height="47"/>
+                                <rect key="frame" x="117.00000000000001" y="64" width="180.33333333333337" height="47"/>
                                 <fontDescription key="fontDescription" name="Splatch" family="Splatch" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-47-4QK" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
-                                <rect key="frame" x="16" y="110" width="288" height="165"/>
+                                <rect key="frame" x="63" y="134" width="288" height="164.33333333333337"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="MoC-bN-gae">
-                                        <rect key="frame" x="125.5" y="64" width="37" height="37"/>
+                                        <rect key="frame" x="125.66666666666666" y="63.666666666666657" width="37" height="37"/>
                                         <color key="color" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G97-xy-deC">
-                                        <rect key="frame" x="20" y="20" width="248" height="125"/>
+                                        <rect key="frame" x="20" y="19.999999999999993" width="248" height="124.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN7-32-jhP">
-                                                <rect key="frame" x="0.0" y="0.0" width="248" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="24.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtt-9w-JIF">
-                                                <rect key="frame" x="0.0" y="30" width="248" height="30"/>
+                                                <rect key="frame" x="0.0" y="29.666666666666657" width="248" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dds-eG-H8w">
-                                                <rect key="frame" x="0.0" y="65" width="248" height="25"/>
+                                                <rect key="frame" x="0.0" y="64.666666666666657" width="248" height="24.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7K-AQ-354">
-                                                <rect key="frame" x="0.0" y="95" width="248" height="30"/>
+                                                <rect key="frame" x="0.0" y="94.333333333333343" width="248" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
@@ -91,7 +91,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-XD-Uc3" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
-                                <rect key="frame" x="133" y="315" width="54" height="38"/>
+                                <rect key="frame" x="180" y="338.33333333333331" width="54" height="38"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="login">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,7 +101,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwo-fA-I7V" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
-                                <rect key="frame" x="127" y="373" width="66" height="38"/>
+                                <rect key="frame" x="174" y="396.33333333333331" width="66" height="38"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="signup">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,14 +113,14 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t08-G8-6DM">
-                                <rect key="frame" x="0.0" y="469" width="320" height="10"/>
+                                <rect key="frame" x="0.0" y="492.33333333333331" width="414" height="10"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="1fM-vm-o9I"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvN-Vs-ISZ" customClass="PressableStylized" customModule="Wallachof" customModuleProvider="target">
-                                <rect key="frame" x="130" y="431" width="60" height="38"/>
+                                <rect key="frame" x="177" y="454.33333333333331" width="60" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="about">

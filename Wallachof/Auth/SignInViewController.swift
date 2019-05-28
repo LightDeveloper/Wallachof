@@ -55,7 +55,8 @@ class SignInViewController: UIViewController {
         txtfPassword.text = "1234"
         #endif
         
-        UserWS.test()
+        UserWS.testEncodable()
+        UserWS.testDecodable()
                 
         prepareAnimations()
         localizeViews()
