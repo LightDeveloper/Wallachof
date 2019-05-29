@@ -23,10 +23,19 @@ class CoreDataTesterViewController: UIViewController {
         let persistentContainer = CoreDataManager.shared.persistentContainer
         let context = persistentContainer.viewContext
         
+        let mel = User(context: context)
+        mel.name = "Mel Gibson"
+        mel.nickname = "Melly"
+        
         let dinoDetector = Product(context: context)
         dinoDetector.name = "Dino Detector Ultimate 🦖"
         dinoDetector.desc = "Detector de dinosaurios de última generación"
         dinoDetector.price = 2000.0
+        
+//        dinoDetector.user = mel
+        mel.addToProducts(dinoDetector)
+        
+        
         
         CoreDataManager.shared.saveContext()
     }

@@ -16,23 +16,73 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        let myURL = URL(string:"https://www.apple.com")            
-        let myRequest = URLRequest(url: myURL!)
-        webAbout.load(myRequest)            
-    }
 
-    /*
-    // MARK: - Navigation
+        webAbout.navigationDelegate = self
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let filePath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "webChof") {
+            let urlFile = URL(fileURLWithPath: filePath)
+            let fileRequest = URLRequest(url: urlFile)
+            webAbout.load(fileRequest)
+        } else {
+            let url = URL(string: "https://elpais.com")
+            let webRequest = URLRequest(url: url!)
+            webAbout.load(webRequest)
+        }
     }
-    */
+    
+    func grabarDatos() {
+        // Primero recojo los datos de la web
+        webAbout.evaluateJavaScript("devolverDatos()") { (result, error) in
+            
+            if let error = error {
+                debugPrint("Error \(error.localizedDescription)")
+                return
+            }
+            
+            if let resultString = result as? String,
+                let resultData = resultString.data(using: .utf8),
+                let datos = try? JSONSerialization.jsonObject(with: resultData, options: []) {
+                debugPrint("Cojo estos datos \(datos)")
+            }
+        }
+    }
 }
 
-extension AboutViewController {
+extension AboutViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        debugPrint("decidePolicyFor \(navigationAction.request.url)")
+        
+        if let destURL = navigationAction.request.url,
+            let scheme = destURL.scheme,
+            let command = destURL.host,
+            scheme == "wallachof" {
+            
+            debugPrint("Ejecuto \(command)")
+            if command == "grabarDatos" {
+                grabarDatos()
+            }
+            
+            decisionHandler(WKNavigationActionPolicy.cancel)
+        } else {
+            decisionHandler(WKNavigationActionPolicy.allow)
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        debugPrint("didCommit \(webView.url?.absoluteString)")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        debugPrint("didFinish \(webView.url?.absoluteString)")
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        debugPrint("Did start \(webView.url?.absoluteString)")
+    }
+    
     
 }

@@ -26,5 +26,5 @@ public class Product: NSManagedObject {
             return []
         }
 
-    }
+    }    
 }

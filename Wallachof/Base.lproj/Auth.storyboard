@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dcz-fA-qnW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ov0-ss-Aap">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -181,7 +181,7 @@
         <scene sceneID="Hx7-xk-cfp">
             <objects>
                 <viewController id="Ov0-ss-Aap" customClass="AboutViewController" customModule="Wallachof" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9Zs-MG-13h">
+                    <view key="view" contentMode="scaleToFill" id="9Zs-MG-13h" customClass="UIViewStylized" customModule="Wallachof" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -194,7 +194,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.66185873049999999" green="0.97680455450000003" blue="0.67187399680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ca0-m9-Ud1" firstAttribute="top" secondItem="dIP-xB-NPZ" secondAttribute="top" constant="20" id="LOx-Zq-PHg"/>
                             <constraint firstItem="dIP-xB-NPZ" firstAttribute="trailing" secondItem="ca0-m9-Ud1" secondAttribute="trailing" constant="20" id="VlB-sU-ImX"/>
@@ -202,6 +202,9 @@
                             <constraint firstItem="dIP-xB-NPZ" firstAttribute="bottom" secondItem="ca0-m9-Ud1" secondAttribute="bottom" constant="60" id="htL-sy-Mum"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dIP-xB-NPZ"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="addBackgroundPattern" value="bg-login"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="webAbout" destination="ca0-m9-Ud1" id="bMi-CC-ngK"/>
