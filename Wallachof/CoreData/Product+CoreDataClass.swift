@@ -25,6 +25,21 @@ public class Product: NSManagedObject {
             debugPrint("Error al hacer un fetch request grave no, gravisísísísmo")
             return []
         }
+    }
+    
+    static func productsWith(name: String) -> [Product] {
+        let productosRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        productosRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@", name)
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        do {
+            let productos = try context.fetch(productosRequest)
+            return productos
+        } catch {
+            debugPrint("Error al hacer un fetch request grave no, gravisísísísmo")
+            return []
+        }
+        
+    }
 
-    }    
 }

@@ -32,10 +32,25 @@ class CoreDataTesterViewController: UIViewController {
         dinoDetector.desc = "Detector de dinosaurios de última generación"
         dinoDetector.price = 2000.0
         
-//        dinoDetector.user = mel
+        let dinoNinja = Product(context: context)
+        dinoNinja.name = "Dino Detector Ultimate Ninja"
+        dinoNinja.desc = "La leche de ninja"
+        dinoNinja.price = 20000.0
+        dinoNinja.user = mel
+        
         mel.addToProducts(dinoDetector)
         
+        let products = Product.productsWith(name: "detector")
+        products.forEach { (product) in
+            debugPrint("Encontrado \(product.name)")
+        }
         
+        mel.products?.allObjects.forEach({ (product) in
+            if let product = product as? Product {
+                debugPrint("Mel tiene \(product.name)")
+            }
+        })
+
         
         CoreDataManager.shared.saveContext()
     }

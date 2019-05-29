@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func userIsLogged() -> Bool {
+//        return true
         return UserDefaults.standard.bool(forKey: "userLogged")
     }
     
