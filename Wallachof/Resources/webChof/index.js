@@ -4,5 +4,5 @@ function holaMundo() {
 }
 
 function devolverDatos() {
-    return "{'name': 'david'}"
+    return "{\"name\": \"david\"}"
 }
